@@ -10,22 +10,22 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📁</text></svg>">
     <style>
         :root {
-            --md-sys-color-primary: #6750a4;
+            --md-sys-color-primary: #0066ff;
             --md-sys-color-on-primary: #ffffff;
-            --md-sys-color-primary-container: #eaddff;
-            --md-sys-color-on-primary-container: #21005d;
-            --md-sys-color-secondary: #625b71;
+            --md-sys-color-primary-container: #dceeff;
+            --md-sys-color-on-primary-container: #001b3d;
+            --md-sys-color-secondary: #546e7a;
             --md-sys-color-on-secondary: #ffffff;
-            --md-sys-color-secondary-container: #e8def8;
-            --md-sys-color-on-secondary-container: #1d192b;
-            --md-sys-color-surface: #fef7ff;
-            --md-sys-color-on-surface: #1c1b1f;
-            --md-sys-color-surface-variant: #e7e0ec;
-            --md-sys-color-on-surface-variant: #49454f;
-            --md-sys-color-outline: #79747e;
-            --md-sys-color-outline-variant: #cac4d0;
-            --md-sys-color-background: #fef7ff;
-            --md-sys-color-on-background: #1c1b1f;
+            --md-sys-color-secondary-container: #cfd8dc;
+            --md-sys-color-on-secondary-container: #0a1c24;
+            --md-sys-color-surface: #f6faff;
+            --md-sys-color-on-surface: #1a1c1e;
+            --md-sys-color-surface-variant: #e0e3eb;
+            --md-sys-color-on-surface-variant: #42474e;
+            --md-sys-color-outline: #70757c;
+            --md-sys-color-outline-variant: #c0c4cc;
+            --md-sys-color-background: #f6faff;
+            --md-sys-color-on-background: #1a1c1e;
             --md-elevation-1: 0 1px 2px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.05);
             --md-elevation-2: 0 1px 2px rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,0.05);
             --md-shape-corner-full: 9999px;
@@ -34,47 +34,24 @@
         }
 
         [data-theme="dark"] {
-            --md-sys-color-primary: #d0bcff;
-            --md-sys-color-on-primary: #381e72;
-            --md-sys-color-primary-container: #4f378b;
-            --md-sys-color-on-primary-container: #eaddff;
-            --md-sys-color-secondary: #ccc2dc;
-            --md-sys-color-on-secondary: #332d41;
-            --md-sys-color-secondary-container: #4a4458;
-            --md-sys-color-on-secondary-container: #e8def8;
-            --md-sys-color-surface: #1c1b1f;
-            --md-sys-color-on-surface: #e6e1e5;
-            --md-sys-color-surface-variant: #49454f;
-            --md-sys-color-on-surface-variant: #cac4d0;
-            --md-sys-color-outline: #938f99;
-            --md-sys-color-outline-variant: #49454f;
-            --md-sys-color-background: #1c1b1f;
-            --md-sys-color-on-background: #e6e1e5;
+            --md-sys-color-primary: #80bfff;
+            --md-sys-color-on-primary: #003166;
+            --md-sys-color-primary-container: #004899;
+            --md-sys-color-on-primary-container: #dceeff;
+            --md-sys-color-secondary: #b0bec5;
+            --md-sys-color-on-secondary: #1c3138;
+            --md-sys-color-secondary-container: #37474f;
+            --md-sys-color-on-secondary-container: #cfd8dc;
+            --md-sys-color-surface: #1a1c1e;
+            --md-sys-color-on-surface: #e2e2e6;
+            --md-sys-color-surface-variant: #42474e;
+            --md-sys-color-on-surface-variant: #c0c4cc;
+            --md-sys-color-outline: #8a8f94;
+            --md-sys-color-outline-variant: #42474e;
+            --md-sys-color-background: #1a1c1e;
+            --md-sys-color-on-background: #e2e2e6;
             --md-elevation-1: 0 1px 2px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.15);
             --md-elevation-2: 0 1px 2px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.15);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) {
-                --md-sys-color-primary: #d0bcff;
-                --md-sys-color-on-primary: #381e72;
-                --md-sys-color-primary-container: #4f378b;
-                --md-sys-color-on-primary-container: #eaddff;
-                --md-sys-color-secondary: #ccc2dc;
-                --md-sys-color-on-secondary: #332d41;
-                --md-sys-color-secondary-container: #4a4458;
-                --md-sys-color-on-secondary-container: #e8def8;
-                --md-sys-color-surface: #1c1b1f;
-                --md-sys-color-on-surface: #e6e1e5;
-                --md-sys-color-surface-variant: #49454f;
-                --md-sys-color-on-surface-variant: #cac4d0;
-                --md-sys-color-outline: #938f99;
-                --md-sys-color-outline-variant: #49454f;
-                --md-sys-color-background: #1c1b1f;
-                --md-sys-color-on-background: #e6e1e5;
-                --md-elevation-1: 0 1px 2px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.15);
-                --md-elevation-2: 0 1px 2px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.15);
-            }
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -86,7 +63,6 @@
         }
         .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
 
-        /* 顶部设置栏 */
         .top-settings-bar {
             display: flex; justify-content: flex-end; gap: 12px; padding: 12px 0; margin-bottom: 8px;
         }
@@ -105,8 +81,8 @@
 
         .profile-section { margin: 28px 0 28px; }
         .profile-card { padding: 24px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
-        .profile-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--md-sys-color-primary-container); display: flex; align-items: center; justify-content: center; font-size: 36px; color: var(--md-sys-color-on-primary-container); overflow: hidden; }
-        .profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .profile-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--md-sys-color-primary-container); overflow: hidden; flex-shrink: 0; }
+        .profile-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .profile-info { flex:1; min-width:200px; }
         .profile-name { font-size:1.5rem; font-weight:500; }
         .profile-bio { font-size:0.9rem; color: var(--md-sys-color-on-surface-variant); margin: 8px 0 16px; }
@@ -135,9 +111,17 @@
         .stat-label { font-size:0.75rem; color: var(--md-sys-color-on-surface-variant); }
 
         .toolbar { display:flex; flex-wrap:wrap; gap:12px; align-items:center; padding:16px; margin-bottom:16px; }
-        .search-wrapper { flex:1; min-width:200px; position:relative; }
-        .search-icon { position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--md-sys-color-on-surface-variant); }
-        .search-input { width:100%; padding:10px 14px 10px 42px; border:1px solid var(--md-sys-color-outline); border-radius:var(--md-shape-corner-full); background:var(--md-sys-color-surface); color:var(--md-sys-color-on-surface); outline:none; font-size:0.9rem; }
+        .search-wrapper { flex:1; min-width:200px; position:relative; display:flex; align-items:center; }
+        .search-icon {
+            position:absolute; left:14px; top:50%; transform:translateY(-50%);
+            color:var(--md-sys-color-on-surface-variant); pointer-events:none;
+            display:flex; align-items:center;
+        }
+        .search-input {
+            width:100%; padding:10px 14px 10px 42px; border:1px solid var(--md-sys-color-outline);
+            border-radius:var(--md-shape-corner-full); background:var(--md-sys-color-surface);
+            color:var(--md-sys-color-on-surface); outline:none; font-size:0.9rem;
+        }
         .search-input:focus { border-color:var(--md-sys-color-primary); }
 
         .btn {
@@ -152,8 +136,15 @@
         .btn-filled:hover { background:var(--md-sys-color-on-primary-container); }
 
         .view-toggle-group { display:flex; background:var(--md-sys-color-surface-variant); border-radius:var(--md-shape-corner-full); padding:3px; }
-        .view-toggle-btn { padding:7px 14px; border-radius:var(--md-shape-corner-full); border:none; background:transparent; cursor:pointer; font-size:0.8rem; color:var(--md-sys-color-on-surface-variant); }
-        .view-toggle-btn.active { background:var(--md-sys-color-surface); color:var(--md-sys-color-on-surface); box-shadow:var(--md-elevation-1); }
+        .view-toggle-btn {
+            padding:7px 14px; border-radius:var(--md-shape-corner-full); border:none;
+            background:transparent; cursor:pointer; font-size:0.8rem; color:var(--md-sys-color-on-surface-variant);
+            display:inline-flex; align-items:center; gap:4px;
+        }
+        .view-toggle-btn.active {
+            background:var(--md-sys-color-surface); color:var(--md-sys-color-on-surface);
+            box-shadow:var(--md-elevation-1);
+        }
 
         .filter-tags-bar { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 4px; align-items:center; }
         .filter-tag { padding:6px 14px; border-radius:var(--md-shape-corner-full); font-size:0.75rem; font-weight:500; cursor:pointer; border:1px solid var(--md-sys-color-outline-variant); background:var(--md-sys-color-surface); color:var(--md-sys-color-on-surface-variant); transition:0.2s; }
@@ -164,7 +155,6 @@
         .file-table th { text-align:left; padding:14px 18px; font-size:0.75rem; color:var(--md-sys-color-on-surface-variant); border-bottom:1px solid var(--md-sys-color-outline-variant); }
         .file-table td { padding:13px 18px; border-bottom:1px solid var(--md-sys-color-outline-variant); font-size:0.9rem; transition: background 0.2s; }
         .file-table tbody tr:hover { background:var(--md-sys-color-surface-variant); }
-
         .file-cards-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap:14px; padding:16px; }
         .file-card { background:var(--md-sys-color-surface); border-radius:16px; padding:18px; border:1px solid var(--md-sys-color-outline-variant); display:flex; flex-direction:column; gap:8px; box-shadow:var(--md-elevation-1); transition: box-shadow 0.2s; }
         .file-card:hover { box-shadow:var(--md-elevation-2); }
@@ -184,6 +174,10 @@
         .footer { text-align:center; padding:28px; color:var(--md-sys-color-on-surface-variant); font-size:0.8rem; }
         .footer a { color:var(--md-sys-color-primary); }
 
+        .icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
         @media (max-width:768px) {
             .file-table th:nth-child(2), .file-table td:nth-child(2) { display:none; }
             .file-cards-grid { grid-template-columns:1fr; }
@@ -192,7 +186,6 @@
 </head>
 <body>
 <div class="container">
-    <!-- 顶部主题和语言选择器 -->
     <div class="top-settings-bar">
         <select id="themeSelect" aria-label="主题模式">
             <option value="auto">🌓 自动</option>
@@ -209,19 +202,24 @@
     <section class="profile-section">
         <div class="profile-card card">
             <div class="profile-avatar" id="avatarContainer">
-                <span id="avatarPlaceholder">🍜</span>
-                <img id="avatarImg" alt="FoodUI" style="display:none;" referrerpolicy="no-referrer">
+                <img id="avatarImg" src="" alt="FoodUI" referrerpolicy="no-referrer" style="display:none;">
+                <span id="avatarPlaceholder" style="font-size:36px;display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--md-sys-color-on-primary-container);">🍜</span>
             </div>
             <div class="profile-info">
                 <h1 class="profile-name">FoodUI</h1>
                 <p class="profile-bio" id="bioText">配置文件与网盘地址资源分享站</p>
                 <div class="profile-links">
-                    <a href="https://space.bilibili.com/" target="_blank" class="profile-link" id="biliLink">
-                        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.254 1.56 3.773v7.637c-.036 1.519-.556 2.778-1.56 3.773s-2.264 1.52-3.773 1.574H5.333c-1.51-.054-2.769-.578-3.773-1.574S.036 18.981 0 17.462V9.825c.036-1.519.556-2.778 1.56-3.773s2.264-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .653.124.92.373l.027.027c.249.249.373.551.373.907 0 .355-.124.658-.373.906l-1.174 1.12zM5.333 7.24c-.746 0-1.387.262-1.92.787-.533.524-.8 1.165-.8 1.92v7.637c0 .746.267 1.387.8 1.92.533.533 1.174.8 1.92.8h13.334c.746 0 1.387-.267 1.92-.8.533-.533.8-1.174.8-1.92V9.947c0-.755-.267-1.396-.8-1.92-.533-.525-1.174-.787-1.92-.787H5.333zM8 11.107c.356 0 .658.124.907.373l2.72 2.72V8.947a1.26 1.26 0 0 1 .373-.907c.249-.249.551-.373.907-.373.355 0 .658.124.907.373s.373.551.373.907v5.253c0 .356-.124.658-.373.907-.249.249-.551.373-.907.373-.355 0-.658-.124-.907-.373l-2.72-2.72v2.72c0 .356-.124.658-.373.907-.249.249-.551.373-.907.373s-.658-.124-.907-.373a1.26 1.26 0 0 1-.373-.907V10.24c0-.356.124-.658.373-.907.249-.249.551-.373.907-.373z"/></svg>
+                    <a href="https://space.bilibili.com/99118896" target="_blank" class="profile-link" id="biliLink">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="9" y1="6" x2="9" y2="3" />
+                            <line x1="15" y1="6" x2="15" y2="3" />
+                            <rect x="4" y="6" width="16" height="13" rx="2" />
+                            <polygon points="10.5,10 10.5,14 14,12" fill="currentColor" stroke="none" />
+                        </svg>
                         <span>B站</span><span class="link-url">: space.bilibili.com</span>
                     </a>
                     <a href="https://github.com/FoodUI" target="_blank" class="profile-link">
-                        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
                         <span>GitHub</span><span class="link-url">: https://github.com/FoodUI</span>
                     </a>
                     <a href="mailto:294825493@qq.com" class="profile-link">
@@ -242,17 +240,33 @@
 
     <div class="toolbar card">
         <div class="search-wrapper">
-            <span class="search-icon">🔍</span>
+            <span class="search-icon">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
             <input type="search" class="search-input" id="searchInput" placeholder="搜索...">
         </div>
         <select class="sort-select" id="sortSelect" style="padding:10px;border-radius:20px;border:1px solid var(--md-sys-color-outline);background:var(--md-sys-color-surface);">
             <option value="name-asc">按名称 ↑</option><option value="name-desc">按名称 ↓</option><option value="size-asc">按大小 ↑</option><option value="size-desc">按大小 ↓</option>
         </select>
         <div class="view-toggle-group">
-            <button class="view-toggle-btn active" data-view="table">📋</button>
-            <button class="view-toggle-btn" data-view="cards">🃏</button>
+            <button class="view-toggle-btn active" data-view="table">
+                <svg class="icon" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            </button>
+            <button class="view-toggle-btn" data-view="cards">
+                <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </button>
         </div>
-        <button class="btn btn-outlined" id="refreshBtn"><span id="refreshIcon">🔄</span> <span id="refreshText">刷新</span></button>
+        <button class="btn btn-outlined" id="refreshBtn">
+            <span id="refreshIcon">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M21 10.5a9 9 0 0 0-15.6-5.4"/>
+                    <polyline points="21 4 21 10.5 14.5 10.5"/>
+                    <path d="M3 13.5a9 9 0 0 0 15.6 5.4"/>
+                    <polyline points="3 20 3 13.5 9.5 13.5"/>
+                </svg>
+            </span>
+            <span id="refreshText">刷新</span>
+        </button>
     </div>
 
     <div class="filter-tags-bar" id="filterTagsBar"></div>
@@ -281,8 +295,19 @@
 
 <script>
 (function() {
-    const CONFIG = { githubOwner:'FoodUI', githubRepo:null, githubBranch:'main', dataPath:'data/', cacheTTL:3600000, maxPreviewSize:500*1024, newFileThreshold:7*24*3600*1000, useCDN:true };
-    function inferRepo() { const m=window.location.pathname.match(/^\/([^/]+)(?:\/([^/]+))?/); CONFIG.githubRepo = (m&&m[2])||(m&&m[1])||'foodhub-data'; }
+    const CONFIG = { githubOwner:'FoodUI', githubRepo:'foodui.github.io', githubBranch:'main', dataPath:'data/', cacheTTL:3600000, maxPreviewSize:500*1024, newFileThreshold:7*24*3600*1000, useCDN:true };
+
+    function inferRepo() {
+        if (window.location.hostname === 'foodui.github.io') {
+            CONFIG.githubOwner = 'FoodUI';
+            CONFIG.githubRepo = 'foodui.github.io';
+        } else {
+            const m = window.location.pathname.match(/^\/([^/]+)(?:\/([^/]+))?/);
+            if (m && m[2]) CONFIG.githubRepo = m[2];
+            else if (m && m[1]) CONFIG.githubRepo = m[1];
+            else CONFIG.githubRepo = 'foodhub-data';
+        }
+    }
 
     const langMap = {
         zh: {
@@ -316,7 +341,6 @@
         document.getElementById('stat-label-featured').textContent = t('featured');
         document.getElementById('emptyText').textContent = t('empty');
         document.getElementById('footerText').innerHTML = t('footer').replace('FoodUI','<a href="https://github.com/FoodUI">FoodUI</a>').replace('GitHub Pages','<a href="#">GitHub Pages</a>');
-        // 排序选项
         const sortSelect = document.getElementById('sortSelect');
         if(sortSelect) {
             sortSelect.options[0].text = t('sortNameAsc');
@@ -324,13 +348,11 @@
             sortSelect.options[2].text = t('sortSizeAsc');
             sortSelect.options[3].text = t('sortSizeDesc');
         }
-        // 链接展开文本
         document.querySelector('#biliLink .link-url').textContent = ': '+t('biliUrl');
         const githubSpan = document.querySelector('.profile-link:nth-child(2) .link-url');
         if(githubSpan) githubSpan.textContent = ': '+t('githubUrl');
         const emailSpan = document.querySelector('.profile-link:nth-child(3) .link-url');
         if(emailSpan) emailSpan.textContent = ': '+t('emailUrl');
-        // 更新筛选栏标签
         updateFilterLabel();
     }
 
@@ -339,17 +361,41 @@
         if(label) label.textContent = t('filterLabel');
     }
 
-    // 主题
-    function applyTheme(mode) {
-        if(mode==='light') document.documentElement.setAttribute('data-theme','light');
-        else if(mode==='dark') document.documentElement.setAttribute('data-theme','dark');
-        else document.documentElement.removeAttribute('data-theme');
+    // ========== 主题控制 ==========
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function setTheme(mode) {
+        if (mode === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else if (mode === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else { // auto
+            document.documentElement.setAttribute('data-theme', systemDark.matches ? 'dark' : 'light');
+        }
+        localStorage.setItem('foodhub_theme', mode);
     }
-    function detectTheme() {
-        const stored = localStorage.getItem('foodhub_theme');
-        if(stored==='light'||stored==='dark') return stored;
-        return 'auto';
+
+    function getStoredTheme() {
+        return localStorage.getItem('foodhub_theme') || 'auto';
     }
+
+    // 监听系统主题变化（仅自动模式生效）
+    systemDark.addEventListener('change', () => {
+        if (getStoredTheme() === 'auto') {
+            document.documentElement.setAttribute('data-theme', systemDark.matches ? 'dark' : 'light');
+        }
+    });
+
+    // 页面初始化时立刻应用主题
+    const initialTheme = getStoredTheme();
+    setTheme(initialTheme);
+
+    // 绑定主题选择器
+    document.getElementById('themeSelect').addEventListener('change', function() {
+        setTheme(this.value);
+    });
+    // 同步选择器的默认值
+    document.getElementById('themeSelect').value = initialTheme;
 
     const state = {
         allFiles:[], manifest:null, filteredFiles:[],
@@ -387,12 +433,17 @@
     };
     const getRawUrl = file => CONFIG.useCDN?`https://cdn.jsdelivr.net/gh/${CONFIG.githubOwner}/${CONFIG.githubRepo}@${CONFIG.githubBranch}/${file.path}`:(file.download_url||'');
 
-    async function loadBiliAvatar() {
+    async function loadGitHubAvatar() {
         try {
-            const res=await fetch('https://api.bilibili.com/x/web-interface/search/all/v2?keyword=FoodUI&type=2');
-            const d=await res.json(); const u=d?.data?.result?.[0];
-            if(u&&u.mid){ const i=await fetch(`https://api.bilibili.com/x/space/acc/info?mid=${u.mid}`); const j=await i.json(); if(j?.data?.face){ document.getElementById('avatarImg').src=j.data.face; document.getElementById('avatarImg').style.display='block'; document.getElementById('avatarPlaceholder').style.display='none'; } }
-        } catch(e){}
+            const res = await fetch('https://api.github.com/users/FoodUI');
+            const data = await res.json();
+            if (data.avatar_url) {
+                const img = document.getElementById('avatarImg');
+                img.src = data.avatar_url;
+                img.style.display = 'block';
+                document.getElementById('avatarPlaceholder').style.display = 'none';
+            }
+        } catch(e) { console.warn('GitHub头像加载失败'); }
     }
 
     function renderFilterTags() {
@@ -435,7 +486,6 @@
         const totalPages=Math.ceil(files.length/state.itemsPerPage);
         const start=(state.currentPage-1)*state.itemsPerPage;
         const pageFiles=files.slice(start, start+state.itemsPerPage);
-        // 直接渲染，无动画
         if(state.currentView==='table') renderTable(pageFiles); else renderCards(pageFiles);
         window._foodHubFiles={}; pageFiles.forEach(f=>window._foodHubFiles[f.name]=f);
         renderPagination(totalPages);
@@ -505,16 +555,17 @@
             dom.viewToggleBtns.forEach(x=>x.classList.remove('active')); this.classList.add('active'); state.currentView=this.dataset.view; renderFileListPage();
         }));
         dom.refreshBtn.addEventListener('click',async function(){
-            const icon=document.getElementById('refreshIcon'); icon.textContent='⏳'; this.disabled=true;
+            const icon = document.getElementById('refreshIcon');
+            icon.innerHTML = `<svg class="icon" viewBox="0 0 24 24" style="animation: spin 1s linear infinite;"><path d="M21 10.5a9 9 0 0 0-15.6-5.4"/><polyline points="21 4 21 10.5 14.5 10.5"/><path d="M3 13.5a9 9 0 0 0 15.6 5.4"/><polyline points="3 20 3 13.5 9.5 13.5"/></svg>`;
+            this.disabled = true;
             await fetchFiles(true);
-            icon.textContent='🔄'; this.disabled=false;
+            icon.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path d="M21 10.5a9 9 0 0 0-15.6-5.4"/><polyline points="21 4 21 10.5 14.5 10.5"/><path d="M3 13.5a9 9 0 0 0 15.6 5.4"/><polyline points="3 20 3 13.5 9.5 13.5"/></svg>`;
+            this.disabled = false;
             applyLang();
         });
         document.getElementById('closePreviewBtn').addEventListener('click',closePreview);
         dom.previewModal.addEventListener('click',e=>{ if(e.target===dom.previewModal) closePreview(); });
-        document.getElementById('themeSelect').addEventListener('change',function(){
-            const val=this.value; applyTheme(val); localStorage.setItem('foodhub_theme',val);
-        });
+        // 语言选择器
         document.getElementById('langSelect').addEventListener('change',function(){
             const val=this.value; 
             if(val==='auto') currentLang=detectLang(); else currentLang=val;
@@ -525,13 +576,14 @@
 
     async function init(){
         inferRepo();
-        const savedTheme=detectTheme(); applyTheme(savedTheme); document.getElementById('themeSelect').value=savedTheme;
-        const savedLang=localStorage.getItem('foodhub_lang')||'auto'; document.getElementById('langSelect').value=savedLang;
+        // 语言初始化
+        const savedLang=localStorage.getItem('foodhub_lang')||'auto';
+        document.getElementById('langSelect').value = savedLang;
         currentLang = savedLang==='auto'? detectLang() : savedLang;
         applyLang();
         bindEvents();
         await fetchFiles();
-        loadBiliAvatar();
+        loadGitHubAvatar();
     }
     init();
 })();
