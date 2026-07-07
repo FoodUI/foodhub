@@ -373,14 +373,16 @@
         const CONFIG = { githubOwner:'FoodUI', githubRepo:'foodui.github.io', githubBranch:'main', dataPath:'data/', cacheTTL:3600000, maxPreviewSize:500*1024, newFileThreshold:7*24*3600*1000, useCDN:true };
 
         function inferRepo() {
+            // 明确指定仓库，避免推断失败
             if (window.location.hostname === 'foodui.github.io') {
                 CONFIG.githubOwner = 'FoodUI';
                 CONFIG.githubRepo = 'foodui.github.io';
             } else {
+                // 对于其他部署情况，请手动修改
                 const m = window.location.pathname.match(/^\/([^/]+)(?:\/([^/]+))?/);
                 if (m && m[2]) CONFIG.githubRepo = m[2];
                 else if (m && m[1]) CONFIG.githubRepo = m[1];
-                else CONFIG.githubRepo = 'foodhub-data';
+                else CONFIG.githubRepo = 'foodui.github.io';
             }
         }
 
@@ -685,18 +687,13 @@
 
         function openPreview(file){
             state.previewFile = file;
-            dom.previewModalTitle.textContent = `📄 ${file.name}`;
+            document.getElementById('previewModalTitle').textContent = `📄 ${file.name}`;
             dom.previewCode.textContent = '加载中...';
             dom.previewModal.classList.add('active');
             fetch(getRawUrl(file))
                 .then(r => r.text())
-                .then(text => {
-                    // 安全显示：统一用 textContent 避免 HTML 渲染
-                    dom.previewCode.textContent = text;
-                })
-                .catch(err => {
-                    dom.previewCode.textContent = `加载失败: ${err.message}`;
-                });
+                .then(text => { dom.previewCode.textContent = text; })
+                .catch(err => { dom.previewCode.textContent = `加载失败: ${err.message}`; });
         }
         function closePreview(){ dom.previewModal.classList.remove('active'); }
         function triggerDownload(file){ const a = document.createElement('a'); a.href = getRawUrl(file); a.download = file.name; a.click(); toast('下载已开始'); }
@@ -705,17 +702,24 @@
         async function fetchFiles(force = false){
             if(!force){
                 const c = JSON.parse(localStorage.getItem('foodhub_files')||'null');
-                if(c && Date.now()-c.t < CONFIG.cacheTTL){ state.allFiles = c.v; state.isLoading = false; applyFilters(); renderFilterTags(); return; }
+                if(c && Date.now()-c.t < CONFIG.cacheTTL){
+                    state.allFiles = c.v;
+                    state.isLoading = false;
+                    applyFilters();
+                    renderFilterTags();
+                    return;
+                }
             }
             state.isLoading = true; renderFileListPage();
             try{
                 const res = await fetch(`https://api.github.com/repos/${CONFIG.githubOwner}/${CONFIG.githubRepo}/contents/${CONFIG.dataPath}?ref=${CONFIG.githubBranch}`);
-                if(!res.ok) throw new Error();
+                if(!res.ok) throw new Error(`HTTP ${res.status} (可能路径错误或为空)`);
                 const data = await res.json();
-                if(!Array.isArray(data)) throw new Error('Invalid directory');
+                if(!Array.isArray(data)) throw new Error('路径不是目录');
                 const files = data.filter(i => i.type === 'file').map(i => ({
                     name: i.name, path: i.path, size: i.size, download_url: i.download_url, lastCommitDate: null
                 }));
+                // 获取每个文件的最后提交时间
                 const commitPromises = files.map(async (file) => {
                     const date = await fetchFileCommitDate(file.path);
                     file.lastCommitDate = date ? date.getTime() : null;
@@ -724,7 +728,9 @@
                 state.allFiles = files;
                 localStorage.setItem('foodhub_files', JSON.stringify({t: Date.now(), v: files}));
             } catch(e){
-                state.allFiles = JSON.parse(localStorage.getItem('foodhub_files')||'null')?.v || [];
+                state.allFiles = [];
+                console.error('获取文件失败:', e);
+                toast(`获取文件失败: ${e.message}`);
             }
             state.isLoading = false;
             state.currentPage = 1;
@@ -757,7 +763,6 @@
                 localStorage.setItem('foodhub_lang', val === 'auto' ? 'auto' : val);
                 applyLang(); renderFilterTags(); renderFileListPage();
             });
-            // 预览窗口按钮事件
             document.getElementById('copyContentBtn').addEventListener('click', () => {
                 const text = dom.previewCode.textContent;
                 if (text && text !== '加载中...') {
