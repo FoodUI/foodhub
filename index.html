@@ -4,70 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodHub - 配置文件与资源分享</title>
-    <meta name="description" content="FoodUI 的配置文件与资源分享站">
+    <meta name="description" content="FoodUI 的配置文件与资源分享站 · 高透玻璃设计">
     <meta name="author" content="FoodUI">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📁</text></svg>">
     <style>
         :root {
-            --md-sys-color-primary: #0066ff;
-            --md-sys-color-on-primary: #ffffff;
-            --md-sys-color-primary-container: #dceeff;
-            --md-sys-color-on-primary-container: #001b3d;
-            --md-sys-color-secondary: #546e7a;
-            --md-sys-color-on-secondary: #ffffff;
-            --md-sys-color-secondary-container: #cfd8dc;
-            --md-sys-color-on-secondary-container: #0a1c24;
-            --card-bg: rgba(255, 255, 255, 0.2);
-            --card-border: rgba(255, 255, 255, 0.3);
-            --md-sys-color-surface: var(--card-bg);
-            --md-sys-color-on-surface: #1a1c1e;
-            --md-sys-color-surface-variant: rgba(224, 227, 235, 0.3);
-            --md-sys-color-on-surface-variant: #2d2d2d;
-            --md-sys-color-outline: #70757c;
-            --md-sys-color-outline-variant: rgba(255,255,255,0.4);
-            --md-sys-color-background: #f6faff;
-            --md-sys-color-on-background: #1a1c1e;
-            --liquid-blur: 25px;
-            --liquid-highlight: rgba(255,255,255,0.5);
-            --liquid-shadow-1: 0 10px 30px rgba(0,0,0,0.1);
-            --liquid-shadow-2: 0 0 0 1px rgba(255,255,255,0.3) inset;
-            --liquid-shadow-3: 0 0 20px rgba(255,255,255,0.2);
-            --md-shape-corner-full: 9999px;
-            --transition: 0.25s cubic-bezier(0.2, 0, 0, 1);
-            --text-shadow-light: 0 1px 4px rgba(0,0,0,0.2);
+            --primary: #0066ff;
+            --on-primary: #ffffff;
+            --primary-container: #dceeff;
+            --on-primary-container: #001b3d;
+            --secondary: #546e7a;
+            --secondary-container: #cfd8dc;
+            --on-secondary-container: #0a1c24;
+            --surface: #f6faff;
+            --on-surface: #1a1c1e;
+            --surface-variant: rgba(224, 227, 235, 0.1);
+            --on-surface-variant: #2d2d2d;
+            --outline: #70757c;
+            --outline-variant: rgba(255,255,255,0.25);
+            --background: #f6faff;
+            --on-background: #1a1c1e;
+            /* 高透玻璃卡片 */
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --glass-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --glass-highlight: rgba(255,255,255,0.4);
+            --text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+            --radius-full: 9999px;
+            --transition: 0.25s cubic-bezier(0.2,0,0,1);
+            --font: 'Google Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            --mono: 'JetBrains Mono', 'Fira Code', monospace;
         }
 
         [data-theme="dark"] {
-            --md-sys-color-primary: #80bfff;
-            --md-sys-color-on-primary: #003166;
-            --md-sys-color-primary-container: #004899;
-            --md-sys-color-on-primary-container: #dceeff;
-            --md-sys-color-secondary: #b0bec5;
-            --md-sys-color-on-secondary: #1c3138;
-            --md-sys-color-secondary-container: #37474f;
-            --md-sys-color-on-secondary-container: #cfd8dc;
-            --card-bg: rgba(20, 20, 25, 0.3);
-            --card-border: rgba(255, 255, 255, 0.15);
-            --md-sys-color-surface: var(--card-bg);
-            --md-sys-color-on-surface: #ffffff;
-            --md-sys-color-surface-variant: rgba(66, 71, 78, 0.4);
-            --md-sys-color-on-surface-variant: #e0e0e0;
-            --md-sys-color-outline: #8a8f94;
-            --md-sys-color-outline-variant: rgba(255,255,255,0.2);
-            --md-sys-color-background: #1a1c1e;
-            --md-sys-color-on-background: #e2e2e6;
-            --liquid-highlight: rgba(255,255,255,0.1);
-            --liquid-shadow-1: 0 10px 30px rgba(0,0,0,0.3);
-            --liquid-shadow-2: 0 0 0 1px rgba(255,255,255,0.1) inset;
-            --liquid-shadow-3: 0 0 20px rgba(255,255,255,0.05);
-            --text-shadow-light: 0 1px 4px rgba(0,0,0,0.5);
+            --primary: #80bfff;
+            --on-primary: #003166;
+            --primary-container: #004899;
+            --on-primary-container: #dceeff;
+            --secondary: #b0bec5;
+            --secondary-container: #37474f;
+            --on-secondary-container: #cfd8dc;
+            --surface: #1a1c1e;
+            --on-surface: #e2e2e6;
+            --surface-variant: rgba(66, 71, 78, 0.15);
+            --on-surface-variant: #c0c4cc;
+            --outline: #8a8f94;
+            --outline-variant: rgba(255,255,255,0.1);
+            --background: #1a1c1e;
+            --on-background: #e2e2e6;
+            --glass-bg: rgba(20, 20, 25, 0.1);
+            --glass-border: rgba(255,255,255,0.1);
+            --glass-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            --glass-highlight: rgba(255,255,255,0.06);
+            --text-shadow: 0 1px 6px rgba(0,0,0,0.7);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Google Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: var(--md-sys-color-background);
-            color: var(--md-sys-color-on-background);
+            font-family: var(--font);
+            background: var(--background);
+            color: var(--on-background);
             line-height: 1.6;
             min-height: 100vh;
             transition: background 0.3s, color 0.3s;
@@ -75,21 +71,22 @@
             overflow-x: hidden;
         }
 
-        .video-background {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;
+        .video-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: -2;
         }
-        .gradient-background {
+        .gradient-bg {
             position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; z-index: -3;
-            background: radial-gradient(circle at 30% 40%, var(--md-sys-color-primary-container) 0%, transparent 30%),
-                        radial-gradient(circle at 70% 60%, var(--md-sys-color-secondary-container) 0%, transparent 35%),
-                        radial-gradient(circle at 50% 80%, var(--md-sys-color-surface-variant) 0%, transparent 40%);
+            background: radial-gradient(circle at 30% 40%, var(--primary-container) 0%, transparent 30%),
+                        radial-gradient(circle at 70% 60%, var(--secondary-container) 0%, transparent 35%),
+                        radial-gradient(circle at 50% 80%, var(--surface-variant) 0%, transparent 40%);
             animation: bgFloat 20s ease-in-out infinite alternate;
         }
         @keyframes bgFloat {
-            0% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
-            33% { transform: translate(2%, -1%) rotate(1deg) scale(1.02); }
-            66% { transform: translate(-1%, 2%) rotate(-1deg) scale(0.98); }
-            100% { transform: translate(1%, -2%) rotate(0.5deg) scale(1.01); }
+            0% { transform: translate(0,0) rotate(0deg) scale(1); }
+            33% { transform: translate(2%,-1%) rotate(1deg) scale(1.02); }
+            66% { transform: translate(-1%,2%) rotate(-1deg) scale(0.98); }
+            100% { transform: translate(1%,-2%) rotate(0.5deg) scale(1.01); }
         }
 
         .container { max-width: 960px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
@@ -97,184 +94,149 @@
         .top-bar {
             display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 0 0; flex-wrap: wrap;
         }
-        .top-bar-left { display: flex; align-items: center; }
-        .top-bar-right { display: flex; gap: 12px; align-items: center; }
-        .back-btn {
+        .back-btn, .top-btn {
             display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
-            border-radius: var(--md-shape-corner-full); background: var(--card-bg);
-            border: 1px solid var(--card-border); color: var(--md-sys-color-on-surface);
-            text-decoration: none; font-size: 0.85rem; font-weight: 600;
-            backdrop-filter: blur(var(--liquid-blur)); -webkit-backdrop-filter: blur(var(--liquid-blur));
-            box-shadow: var(--liquid-shadow-1); transition: all var(--transition);
+            border-radius: var(--radius-full); background: var(--glass-bg); border: 1px solid var(--glass-border);
+            color: var(--on-surface); text-decoration: none; font-size: 0.85rem; font-weight: 600;
+            box-shadow: var(--glass-shadow); transition: all var(--transition);
+            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
         }
-        .back-btn:hover { background: rgba(255,255,255,0.3); }
-        .top-bar button, .top-bar select {
-            background: var(--card-bg); border: 1px solid var(--card-border);
-            border-radius: var(--md-shape-corner-full); padding: 8px 16px;
-            font-size: 0.85rem; cursor: pointer; color: var(--md-sys-color-on-surface);
-            box-shadow: var(--liquid-shadow-1); transition: all var(--transition);
-            backdrop-filter: blur(var(--liquid-blur)); -webkit-backdrop-filter: blur(var(--liquid-blur));
-            font-family: inherit;
-        }
-        .top-bar button:hover, .top-bar select:hover { background: rgba(255,255,255,0.3); }
+        .back-btn:hover, .top-btn:hover { background: rgba(255,255,255,0.15); }
 
-        .liquid-glass-card {
-            background: var(--card-bg); border-radius: 32px; border: 1px solid var(--card-border);
-            backdrop-filter: blur(var(--liquid-blur)); -webkit-backdrop-filter: blur(var(--liquid-blur));
-            box-shadow: var(--liquid-shadow-2), var(--liquid-shadow-3), var(--liquid-shadow-1);
-            transition: all 0.4s cubic-bezier(0.2,0.8,0.4,1); position: relative;
+        .glass {
+            background: var(--glass-bg); border-radius: 28px; border: 1px solid var(--glass-border);
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset, 0 0 20px rgba(255,255,255,0.1), var(--glass-shadow);
+            transition: all 0.4s cubic-bezier(0.2,0.8,0.4,1);
         }
-        .liquid-glass-card:hover {
-            border-color: rgba(255,255,255,0.5);
-            box-shadow: var(--liquid-shadow-2), 0 0 30px rgba(255,255,255,0.3), 0 20px 40px rgba(0,0,0,0.15);
-        }
+        .glass:hover { border-color: rgba(255,255,255,0.4); box-shadow: 0 0 30px rgba(255,255,255,0.2), 0 20px 40px rgba(0,0,0,0.1); }
 
-        .profile-section { margin: 28px 0; }
-        .profile-card { padding: 24px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+        .profile-card { padding: 24px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin: 28px 0; }
         .avatar {
-            width: 80px; height: 80px; border-radius: 50%; background: var(--md-sys-color-primary-container);
-            color: var(--md-sys-color-on-primary-container); display: flex; align-items: center; justify-content: center;
-            font-size: 2rem; font-weight: 500; flex-shrink: 0; overflow: hidden;
-            border: 2px solid rgba(255,255,255,0.6); box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            width: 80px; height: 80px; border-radius: 50%; background: var(--primary-container);
+            color: var(--on-primary-container); display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; flex-shrink: 0; overflow: hidden; border: 2px solid rgba(255,255,255,0.5);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
         .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .profile-info { flex: 1; min-width: 200px; }
-        .profile-name {
-            font-size: 1.8rem; font-weight: 700; color: var(--md-sys-color-on-surface); text-shadow: var(--text-shadow-light);
-        }
-        .profile-bio {
-            font-size: 0.95rem; color: var(--md-sys-color-on-surface-variant); margin: 8px 0 0; font-weight: 500;
-        }
+        .profile-info h1 { font-size: 1.8rem; font-weight: 700; color: var(--on-surface); text-shadow: var(--text-shadow); }
+        .profile-info p { font-size: 0.95rem; color: var(--on-surface-variant); margin-top: 6px; text-shadow: var(--text-shadow); }
 
-        .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin: 20px 0; }
-        .stat-card {
-            background: var(--card-bg); backdrop-filter: blur(var(--liquid-blur)); -webkit-backdrop-filter: blur(var(--liquid-blur));
-            border-radius: 24px; box-shadow: var(--liquid-shadow-1); border: 1px solid var(--card-border);
-            padding: 16px; text-align: center; transition: box-shadow var(--transition);
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap: 12px; margin-bottom: 20px; }
+        .stat-item {
+            padding: 16px; text-align: center; background: var(--glass-bg);
+            border-radius: 24px; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
         }
-        .stat-card:hover { box-shadow: var(--liquid-shadow-1), 0 10px 30px rgba(0,0,0,0.2); }
-        .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--md-sys-color-primary); }
-        .stat-label { font-size: 0.75rem; color: var(--md-sys-color-on-surface-variant); margin-top: 4px; }
+        .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .stat-label { font-size: 0.75rem; color: var(--on-surface-variant); text-shadow: var(--text-shadow); }
 
         .toolbar {
             display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 16px; margin-bottom: 16px;
-            background: var(--card-bg); backdrop-filter: blur(var(--liquid-blur)); -webkit-backdrop-filter: blur(var(--liquid-blur));
-            border-radius: 24px; border: 1px solid var(--card-border); box-shadow: var(--liquid-shadow-1);
+            background: var(--glass-bg); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+            border-radius: 24px; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
         }
-        .search-wrapper { flex: 1; min-width: 200px; position: relative; }
-        .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--md-sys-color-on-surface-variant); display: flex; align-items: center; pointer-events: none; }
+        .search-box { flex: 1; min-width: 200px; position: relative; }
+        .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--on-surface-variant); }
         .search-input {
-            width: 100%; padding: 10px 14px 10px 42px; border: 1px solid var(--card-border);
-            border-radius: var(--md-shape-corner-full); background: var(--md-sys-color-surface);
-            color: var(--md-sys-color-on-surface); outline: none; font-size: 0.9rem;
+            width: 100%; padding: 10px 14px 10px 42px; border: 1px solid var(--glass-border);
+            border-radius: var(--radius-full); background: var(--glass-bg); color: var(--on-surface);
+            outline: none; font-size: 0.9rem;
         }
-        .search-input::placeholder { color: var(--md-sys-color-on-surface-variant); opacity: 0.7; }
-        .search-input:focus { border-color: var(--md-sys-color-primary); }
-
+        .search-input::placeholder { color: var(--on-surface-variant); opacity: 0.7; }
         .btn {
             display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px;
-            border-radius: var(--md-shape-corner-full); font-size: 0.85rem; font-weight: 600; cursor: pointer; border: none;
-            transition: all var(--transition); white-space: nowrap; background: var(--card-bg); color: var(--md-sys-color-on-surface);
-            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 600; cursor: pointer;
+            border: none; transition: all var(--transition); white-space: nowrap;
+            background: var(--glass-bg); color: var(--on-surface);
+            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
         }
-        .btn:hover { background: rgba(255,255,255,0.3); }
-        .btn-filled { background: var(--md-sys-color-primary); color: #fff; }
-        .btn-filled:hover { background: #0055dd; }
+        .btn:hover { background: rgba(255,255,255,0.15); }
+        .btn-primary { background: var(--primary); color: var(--on-primary); }
+        .btn-primary:hover { background: #0055dd; }
 
-        .view-toggle-group { display: flex; background: rgba(255,255,255,0.15); border-radius: 30px; padding: 3px; }
-        .view-toggle-btn {
+        .view-toggle { display: flex; background: rgba(255,255,255,0.1); border-radius: 30px; padding: 3px; }
+        .view-btn {
             padding: 7px 14px; border-radius: 30px; border: none; background: transparent;
-            cursor: pointer; font-size: 0.8rem; color: var(--md-sys-color-on-surface-variant);
-            display: inline-flex; align-items: center; gap: 4px;
+            cursor: pointer; font-size: 0.8rem; color: var(--on-surface-variant);
         }
-        .view-toggle-btn.active { background: var(--card-bg); color: var(--md-sys-color-on-surface); box-shadow: var(--liquid-shadow-1); }
+        .view-btn.active { background: var(--glass-bg); color: var(--on-surface); box-shadow: var(--glass-shadow); }
 
-        .filter-tags-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; align-items: center; }
+        .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; align-items: center; }
         .filter-tag {
             padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: 500; cursor: pointer;
-            border: 1px solid var(--card-border); background: var(--card-bg); color: var(--md-sys-color-on-surface-variant);
-            transition: all var(--transition);
+            border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--on-surface-variant);
         }
-        .filter-tag.active { background: var(--md-sys-color-primary); color: #fff; border-color: var(--md-sys-color-primary); }
+        .filter-tag.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-        .file-list-container { overflow: hidden; }
+        .file-container { overflow: hidden; }
         .file-table { width: 100%; border-collapse: collapse; }
-        .file-table th { text-align: left; padding: 14px 18px; font-size: 0.75rem; color: var(--md-sys-color-on-surface-variant); border-bottom: 1px solid var(--card-border); }
-        .file-table td { padding: 13px 18px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: var(--md-sys-color-on-surface); transition: background var(--transition); }
-        .file-table tbody tr:hover { background: rgba(255,255,255,0.15); }
+        .file-table th { text-align: left; padding: 14px 18px; font-size: 0.75rem; color: var(--on-surface-variant); border-bottom: 1px solid var(--glass-border); }
+        .file-table td { padding: 13px 18px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; color: var(--on-surface); transition: background 0.2s; }
+        .file-table tbody tr:hover { background: rgba(255,255,255,0.08); }
 
-        .file-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; padding: 16px; }
+        .file-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 14px; padding: 16px; }
         .file-card {
-            background: var(--card-bg); backdrop-filter: blur(var(--liquid-blur)); -webkit-backdrop-filter: blur(var(--liquid-blur));
-            border-radius: 20px; border: 1px solid var(--card-border); padding: 18px;
-            display: flex; flex-direction: column; gap: 8px; transition: box-shadow var(--transition); color: var(--md-sys-color-on-surface);
+            background: var(--glass-bg); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+            border-radius: 20px; border: 1px solid var(--glass-border); padding: 18px;
+            display: flex; flex-direction: column; gap: 8px; transition: box-shadow 0.2s; color: var(--on-surface);
         }
-        .file-card:hover { box-shadow: var(--liquid-shadow-1), 0 8px 20px rgba(0,0,0,0.2); }
+        .file-card:hover { box-shadow: var(--glass-shadow), 0 8px 20px rgba(0,0,0,0.15); }
 
         .pagination { display: flex; justify-content: center; align-items: center; gap: 12px; padding: 16px; flex-wrap: wrap; }
         .page-btn {
-            min-width: 40px; padding: 8px 12px; border-radius: 20px; background: var(--card-bg);
-            border: 1px solid var(--card-border); cursor: pointer; font-size: 0.8rem; color: var(--md-sys-color-on-surface);
-            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+            min-width: 40px; padding: 8px 12px; border-radius: 20px; background: var(--glass-bg);
+            border: 1px solid var(--glass-border); cursor: pointer; font-size: 0.8rem; color: var(--on-surface);
         }
-        .page-btn.active { background: var(--md-sys-color-primary); border-color: var(--md-sys-color-primary); color: #fff; }
+        .page-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(8px); }
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(8px); }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .modal {
-            background: var(--card-bg); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
+            background: var(--glass-bg); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
             border-radius: 28px; max-width: 800px; width: 100%; max-height: 85vh;
-            display: flex; flex-direction: column; box-shadow: 0 30px 60px rgba(0,0,0,0.4); border: 1px solid var(--card-border);
+            display: flex; flex-direction: column; box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            border: 1px solid var(--glass-border);
         }
-        .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--card-border); }
-        .modal-body { flex: 1; overflow: auto; padding: 0; }
         .modal-body pre {
-            margin: 0; padding: 20px; background: rgba(0,0,0,0.3); color: var(--md-sys-color-on-surface);
-            font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.85rem; line-height: 1.7;
-            white-space: pre-wrap; word-break: break-word; border-radius: 0; height: 100%; min-height: 300px;
-            overflow-x: auto;
+            margin: 0; padding: 20px; background: rgba(0,0,0,0.2); color: var(--on-surface);
+            font-family: var(--mono); font-size: 0.85rem; line-height: 1.7;
+            white-space: pre-wrap; word-break: break-word; min-height: 300px;
         }
-        .modal-footer { display: flex; justify-content: flex-end; gap: 8px; padding: 12px 20px; border-top: 1px solid var(--card-border); }
 
         .toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 2000; }
         .toast {
             background: rgba(0,0,0,0.8); color: #fff; padding: 12px 20px; border-radius: 30px;
-            margin-top: 8px; animation: toastIn 0.3s; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            margin-top: 8px; animation: toastIn 0.3s; backdrop-filter: blur(10px);
         }
         @keyframes toastIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        .footer { text-align: center; padding: 28px; color: var(--md-sys-color-on-surface-variant); font-size: 0.8rem; }
-        .footer a { color: var(--md-sys-color-primary); }
-
+        .footer { text-align: center; padding: 28px; color: var(--on-surface-variant); font-size: 0.8rem; text-shadow: var(--text-shadow); }
         .icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-        .star-icon { color: #f59e0b; margin-right: 4px; }
+        .star { color: #f59e0b; margin-right: 4px; }
 
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         @media (max-width:768px) {
             .file-table th:nth-child(2), .file-table td:nth-child(2) { display: none; }
-            .file-cards-grid { grid-template-columns: 1fr; }
+            .file-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <video class="video-background" id="bgVideo" autoplay muted loop playsinline>
+    <video class="video-bg" id="bgVideo" autoplay muted loop playsinline>
         <source src="background.mp4" type="video/mp4">
     </video>
-    <div class="gradient-background" id="bgGradient"></div>
+    <div class="gradient-bg" id="bgGradient"></div>
 
     <div class="container">
         <div class="top-bar">
-            <div class="top-bar-left">
-                <a href="https://foodui.github.io" class="back-btn" title="返回 FoodUI 主页">← 返回主页</a>
-            </div>
-            <div class="top-bar-right">
-                <select id="themeSelect" aria-label="主题模式">
+            <a href="https://foodui.github.io" class="back-btn">← 返回主页</a>
+            <div style="display: flex; gap: 12px;">
+                <select id="themeSelect" class="top-btn" style="cursor:pointer;">
                     <option value="auto">🌓 自动</option>
                     <option value="light">☀️ 浅色</option>
                     <option value="dark">🌙 深色</option>
                 </select>
-                <select id="langSelect" aria-label="语言">
+                <select id="langSelect" class="top-btn" style="cursor:pointer;">
                     <option value="auto">🌐 自动</option>
                     <option value="zh">中文</option>
                     <option value="en">English</option>
@@ -282,34 +244,30 @@
             </div>
         </div>
 
-        <section class="profile-section">
-            <div class="profile-card liquid-glass-card">
-                <div class="avatar" id="avatarContainer">
-                    <img id="avatarImg" src="" alt="FoodHub" referrerpolicy="no-referrer" style="display:none;">
-                    <span id="avatarPlaceholder" style="display:flex; align-items:center; justify-content:center; width:100%; height:100%; color:var(--md-sys-color-on-primary-container); font-size:2rem;">📁</span>
-                </div>
-                <div class="profile-info">
-                    <h1 class="profile-name">FoodHub</h1>
-                    <p class="profile-bio" id="bioText">配置文件与资源分享站</p>
-                </div>
+        <div class="profile-card glass">
+            <div class="avatar" id="avatarContainer">
+                <img id="avatarImg" alt="FoodHub" style="display:none;" referrerpolicy="no-referrer">
+                <span id="avatarPlaceholder">📁</span>
             </div>
-        </section>
+            <div class="profile-info">
+                <h1>FoodHub</h1>
+                <p id="bioText">配置文件与资源分享站</p>
+            </div>
+        </div>
 
-        <div class="stats-bar">
-            <div class="stat-card"><div class="stat-value" id="stat-total">--</div><div class="stat-label" id="stat-label-total">文件总数</div></div>
-            <div class="stat-card"><div class="stat-value" id="stat-total-size">--</div><div class="stat-label" id="stat-label-size">总大小</div></div>
-            <div class="stat-card"><div class="stat-value" id="stat-new">--</div><div class="stat-label" id="stat-label-new">近期新增</div></div>
-            <div class="stat-card"><div class="stat-value" id="stat-featured">--</div><div class="stat-label" id="stat-label-featured">精选文件</div></div>
+        <div class="stats">
+            <div class="stat-item"><div class="stat-value" id="statTotal">--</div><div class="stat-label" id="labelTotal">文件总数</div></div>
+            <div class="stat-item"><div class="stat-value" id="statSize">--</div><div class="stat-label" id="labelSize">总大小</div></div>
+            <div class="stat-item"><div class="stat-value" id="statNew">--</div><div class="stat-label" id="labelNew">近期新增</div></div>
+            <div class="stat-item"><div class="stat-value" id="statFeatured">--</div><div class="stat-label" id="labelFeatured">精选文件</div></div>
         </div>
 
         <div class="toolbar">
-            <div class="search-wrapper">
-                <span class="search-icon">
-                    <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                </span>
+            <div class="search-box">
+                <span class="search-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
                 <input type="search" class="search-input" id="searchInput" placeholder="搜索...">
             </div>
-            <select class="sort-select" id="sortSelect" style="padding:10px;border-radius:30px;border:1px solid var(--card-border);background:var(--card-bg);color:var(--md-sys-color-on-surface);">
+            <select id="sortSelect" class="top-btn" style="cursor:pointer;">
                 <option value="name-asc">按名称 ↑</option>
                 <option value="name-desc">按名称 ↓</option>
                 <option value="size-asc">按大小 ↑</option>
@@ -317,52 +275,35 @@
                 <option value="time-desc">按时间 ↓</option>
                 <option value="time-asc">按时间 ↑</option>
             </select>
-            <div class="view-toggle-group">
-                <button class="view-toggle-btn active" data-view="table">
-                    <svg class="icon" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-                </button>
-                <button class="view-toggle-btn" data-view="cards">
-                    <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                </button>
+            <div class="view-toggle">
+                <button class="view-btn active" data-view="table"><svg class="icon" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></button>
+                <button class="view-btn" data-view="cards"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></button>
             </div>
-            <button class="btn btn-outlined" id="refreshBtn">
-                <span id="refreshIcon">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M21 10.5a9 9 0 0 0-15.6-5.4"/><polyline points="21 4 21 10.5 14.5 10.5"/><path d="M3 13.5a9 9 0 0 0 15.6 5.4"/><polyline points="3 20 3 13.5 9.5 13.5"/></svg>
-                </span>
-                <span id="refreshText">刷新</span>
-            </button>
+            <button class="btn" id="refreshBtn"><span id="refreshIcon"><svg class="icon" viewBox="0 0 24 24"><path d="M21 10.5a9 9 0 0 0-15.6-5.4"/><polyline points="21 4 21 10.5 14.5 10.5"/><path d="M3 13.5a9 9 0 0 0 15.6 5.4"/><polyline points="3 20 3 13.5 9.5 13.5"/></svg></span> <span id="refreshText">刷新</span></button>
         </div>
 
-        <div class="filter-tags-bar" id="filterTagsBar"></div>
+        <div class="filter-bar" id="filterBar"></div>
 
-        <div class="file-list-container" id="fileListContainer">
-            <div id="skeletonLoader" style="padding:16px;"></div>
-            <div id="fileListContent"></div>
-            <div class="empty-state" id="emptyState" style="display:none; text-align:center; padding:40px;">
-                <div style="font-size:3rem;">📭</div><div id="emptyText">没有找到文件</div>
-            </div>
-            <div class="pagination" id="paginationContainer"></div>
+        <div class="file-container" id="fileContainer">
+            <div id="skeleton" style="padding:16px;"></div>
+            <div id="fileContent"></div>
+            <div id="emptyState" style="display:none; text-align:center; padding:40px;"><div style="font-size:3rem;">📭</div><div id="emptyText">没有找到文件</div></div>
+            <div class="pagination" id="pagination"></div>
         </div>
 
-        <footer class="footer">
+        <div class="footer">
             <p>© FoodHub · 由 <a href="https://deepseek.com" target="_blank">DeepSeek</a> 生成</p>
-        </footer>
+        </div>
     </div>
 
-    <!-- 预览模态框 -->
     <div class="modal-overlay" id="previewModal">
         <div class="modal">
-            <div class="modal-header">
-                <span id="previewModalTitle">📄 文件预览</span>
-                <button class="btn btn-ghost" id="closePreviewBtn" style="padding:8px;">✕</button>
-            </div>
-            <div class="modal-body">
-                <pre><code id="previewCode"></code></pre>
-            </div>
+            <div class="modal-header"><span id="previewTitle">📄 预览</span><button class="btn" id="closePreviewBtn">✕</button></div>
+            <div class="modal-body"><pre><code id="previewCode"></code></pre></div>
             <div class="modal-footer">
-                <button class="btn" id="copyContentBtn">📋 复制内容</button>
-                <button class="btn" id="copyRawUrlBtn">🔗 复制原始链接</button>
-                <button class="btn btn-filled" id="downloadFromPreviewBtn">⬇️ 下载文件</button>
+                <button class="btn" id="copyContentBtn">📋 复制</button>
+                <button class="btn" id="copyLinkBtn">🔗 链接</button>
+                <button class="btn btn-primary" id="downloadBtn">⬇️ 下载</button>
             </div>
         </div>
     </div>
@@ -370,168 +311,161 @@
 
     <script>
     (function() {
-        const CONFIG = { githubOwner:'FoodUI', githubRepo:'foodui.github.io', githubBranch:'main', dataPath:'data/', cacheTTL:3600000, maxPreviewSize:500*1024, newFileThreshold:7*24*3600*1000, useCDN:true };
+        const CONFIG = {
+            owner: 'FoodUI',
+            repo: 'foodui.github.io',
+            branch: 'main',
+            dataPath: 'data/',
+            cacheTTL: 3600000,
+            maxPreviewSize: 500*1024,
+            newThreshold: 7*24*3600*1000,
+            useCDN: true
+        };
 
         function inferRepo() {
-            // 明确指定仓库，避免推断失败
             if (window.location.hostname === 'foodui.github.io') {
-                CONFIG.githubOwner = 'FoodUI';
-                CONFIG.githubRepo = 'foodui.github.io';
+                CONFIG.owner = 'FoodUI';
+                CONFIG.repo = 'foodui.github.io';
             } else {
-                // 对于其他部署情况，请手动修改
                 const m = window.location.pathname.match(/^\/([^/]+)(?:\/([^/]+))?/);
-                if (m && m[2]) CONFIG.githubRepo = m[2];
-                else if (m && m[1]) CONFIG.githubRepo = m[1];
-                else CONFIG.githubRepo = 'foodui.github.io';
+                if (m && m[2]) CONFIG.repo = m[2];
+                else if (m && m[1]) CONFIG.repo = m[1];
             }
         }
 
         const i18n = {
             zh: {
-                bio: '配置文件与资源分享站', searchPlaceholder:'搜索文件名或描述...', refresh:'刷新', totalFiles:'文件总数', totalSize:'总大小', newFiles:'近期新增', featured:'精选文件',
-                empty:'没有找到文件', preview:'预览', download:'下载', copy:'复制', link:'链接', filterLabel:'筛选：', clear:'清除', featuredTag:'⭐ 精选',
+                bio: '配置文件与资源分享站', search:'搜索文件名或描述...', refresh:'刷新',
+                total:'文件总数', size:'总大小', newFiles:'近期新增', featured:'精选文件',
+                empty:'没有找到文件', preview:'预览', download:'下载', copy:'复制', link:'链接',
+                filterLabel:'筛选：', clear:'清除', featuredTag:'⭐ 精选',
                 pagePrev:'上一页', pageNext:'下一页', pageSize:'每页',
-                sortNameAsc:'按名称 ↑', sortNameDesc:'按名称 ↓', sortSizeAsc:'按大小 ↑', sortSizeDesc:'按大小 ↓', sortTimeDesc:'按时间 ↓', sortTimeAsc:'按时间 ↑'
+                sortNameAsc:'按名称 ↑', sortNameDesc:'按名称 ↓',
+                sortSizeAsc:'按大小 ↑', sortSizeDesc:'按大小 ↓',
+                sortTimeDesc:'按时间 ↓', sortTimeAsc:'按时间 ↑'
             },
             en: {
-                bio: 'Configuration & Resource Sharing', searchPlaceholder:'Search file name or description...', refresh:'Refresh', totalFiles:'Total Files', totalSize:'Total Size', newFiles:'New', featured:'Featured',
-                empty:'No files found', preview:'Preview', download:'Download', copy:'Copy', link:'Link', filterLabel:'Filter: ', clear:'Clear', featuredTag:'⭐ Featured',
+                bio: 'Configuration & Resource Sharing', search:'Search file name or description...', refresh:'Refresh',
+                total:'Total Files', size:'Total Size', newFiles:'New', featured:'Featured',
+                empty:'No files found', preview:'Preview', download:'Download', copy:'Copy', link:'Link',
+                filterLabel:'Filter: ', clear:'Clear', featuredTag:'⭐ Featured',
                 pagePrev:'Previous', pageNext:'Next', pageSize:'Per page',
-                sortNameAsc:'Name ↑', sortNameDesc:'Name ↓', sortSizeAsc:'Size ↑', sortSizeDesc:'Size ↓', sortTimeDesc:'Time ↓', sortTimeAsc:'Time ↑'
+                sortNameAsc:'Name ↑', sortNameDesc:'Name ↓',
+                sortSizeAsc:'Size ↑', sortSizeDesc:'Size ↓',
+                sortTimeDesc:'Time ↓', sortTimeAsc:'Time ↑'
             }
         };
-        let currentLang = 'zh';
+        let lang = 'zh';
+        function t(key) { return i18n[lang]?.[key] || key; }
         function detectLang() {
             const stored = localStorage.getItem('foodhub_lang');
-            if(stored==='zh'||stored==='en') return stored;
-            return navigator.language.startsWith('zh')?'zh':'en';
+            if (stored === 'zh' || stored === 'en') return stored;
+            return navigator.language.startsWith('zh') ? 'zh' : 'en';
         }
-        function t(key) { return (i18n[currentLang] && i18n[currentLang][key]) || key; }
         function applyLang() {
-            document.documentElement.lang = currentLang==='zh'?'zh-CN':'en';
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
             document.getElementById('bioText').textContent = t('bio');
-            document.getElementById('searchInput').placeholder = t('searchPlaceholder');
+            document.getElementById('searchInput').placeholder = t('search');
             document.getElementById('refreshText').textContent = t('refresh');
-            document.getElementById('stat-label-total').textContent = t('totalFiles');
-            document.getElementById('stat-label-size').textContent = t('totalSize');
-            document.getElementById('stat-label-new').textContent = t('newFiles');
-            document.getElementById('stat-label-featured').textContent = t('featured');
+            document.getElementById('labelTotal').textContent = t('total');
+            document.getElementById('labelSize').textContent = t('size');
+            document.getElementById('labelNew').textContent = t('newFiles');
+            document.getElementById('labelFeatured').textContent = t('featured');
             document.getElementById('emptyText').textContent = t('empty');
-            const sortSelect = document.getElementById('sortSelect');
-            if(sortSelect) {
-                sortSelect.options[0].text = t('sortNameAsc');
-                sortSelect.options[1].text = t('sortNameDesc');
-                sortSelect.options[2].text = t('sortSizeAsc');
-                sortSelect.options[3].text = t('sortSizeDesc');
-                sortSelect.options[4].text = t('sortTimeDesc');
-                sortSelect.options[5].text = t('sortTimeAsc');
+            const sort = document.getElementById('sortSelect');
+            if (sort) {
+                sort.options[0].text = t('sortNameAsc');
+                sort.options[1].text = t('sortNameDesc');
+                sort.options[2].text = t('sortSizeAsc');
+                sort.options[3].text = t('sortSizeDesc');
+                sort.options[4].text = t('sortTimeDesc');
+                sort.options[5].text = t('sortTimeAsc');
             }
             updateFilterLabel();
         }
-        function updateFilterLabel() {
-            const label = document.querySelector('.filter-tags-bar span:first-child');
-            if(label) label.textContent = t('filterLabel');
-        }
 
         function applyTheme(mode) {
-            if (mode === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else if (mode === 'light') {
-                document.documentElement.setAttribute('data-theme', 'light');
-            } else {
+            if (mode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+            else if (mode === 'light') document.documentElement.setAttribute('data-theme', 'light');
+            else {
                 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                 document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
             }
             localStorage.setItem('foodhub_theme', mode);
         }
         function detectTheme() {
-            const stored = localStorage.getItem('foodhub_theme');
-            if (stored === 'dark' || stored === 'light' || stored === 'auto') return stored;
-            return 'auto';
+            return localStorage.getItem('foodhub_theme') || 'auto';
         }
 
-        const systemDarkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        systemDarkQuery.addEventListener('change', (e) => {
-            const currentTheme = localStorage.getItem('foodhub_theme') || 'auto';
-            if (currentTheme === 'auto') {
-                document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-            }
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+        systemDark.addEventListener('change', () => {
+            if (localStorage.getItem('foodhub_theme') === 'auto') applyTheme('auto');
         });
 
-        const state = {
-            allFiles:[], manifest:null, featuredList:[], filteredFiles:[],
-            currentView:'table', currentSort:'name-asc', searchQuery:'',
-            activeTags:[], isLoading:true, previewFile:null,
-            currentPage:1, itemsPerPage:10,
+        let state = {
+            files: [], manifest: null, featured: [], filtered: [],
+            view: 'table', sort: 'name-asc', query: '', activeTags: [],
+            loading: true, previewFile: null, page: 1, perPage: 10
         };
 
         const dom = {
             searchInput: document.getElementById('searchInput'),
             sortSelect: document.getElementById('sortSelect'),
-            fileListContent: document.getElementById('fileListContent'),
-            skeletonLoader: document.getElementById('skeletonLoader'),
-            emptyState: document.getElementById('emptyState'),
+            fileContent: document.getElementById('fileContent'),
+            skeleton: document.getElementById('skeleton'),
+            empty: document.getElementById('emptyState'),
             refreshBtn: document.getElementById('refreshBtn'),
-            viewToggleBtns: document.querySelectorAll('.view-toggle-btn'),
-            filterTagsBar: document.getElementById('filterTagsBar'),
+            viewBtns: document.querySelectorAll('.view-btn'),
+            filterBar: document.getElementById('filterBar'),
             previewModal: document.getElementById('previewModal'),
             previewCode: document.getElementById('previewCode'),
-            paginationContainer: document.getElementById('paginationContainer'),
-            statTotal: document.getElementById('stat-total'),
-            statTotalSize: document.getElementById('stat-total-size'),
-            statNew: document.getElementById('stat-new'),
-            statFeatured: document.getElementById('stat-featured'),
+            pagination: document.getElementById('pagination'),
+            statTotal: document.getElementById('statTotal'),
+            statSize: document.getElementById('statSize'),
+            statNew: document.getElementById('statNew'),
+            statFeatured: document.getElementById('statFeatured'),
         };
 
-        const formatBytes = b => b? (i=>parseFloat((b/Math.pow(1024,i)).toFixed(1))+' '+['B','KB','MB','GB'][i])(Math.floor(Math.log(b)/Math.log(1024))):'0 B';
-        const getDisplayName = name => {
-            const meta = getFileMeta(name);
-            return (meta && meta.name) || name;
+        const formatBytes = b => {
+            if (!b) return '0 B';
+            const i = Math.floor(Math.log(b) / Math.log(1024));
+            return parseFloat((b / Math.pow(1024, i)).toFixed(1)) + ' ' + ['B','KB','MB','GB'][i];
         };
-        const getFileTags = name => {
-            const meta = getFileMeta(name);
-            if(meta && meta.tags) return meta.tags;
-            const t=[]; const l=name.toLowerCase();
-            if(l.includes('config')) t.push('配置');
-            if(l.includes('drive')||l.includes('pan')) t.push('网盘');
-            return t.length?t:['其他'];
+        const getRawUrl = file => CONFIG.useCDN ?
+            `https://cdn.jsdelivr.net/gh/${CONFIG.owner}/${CONFIG.repo}@${CONFIG.branch}/${file.path}` :
+            (file.download_url || '');
+        const getMeta = name => state.manifest?.files?.[name] || null;
+        const displayName = name => getMeta(name)?.name || name;
+        const getTags = name => {
+            const meta = getMeta(name);
+            if (meta?.tags) return meta.tags;
+            const t = [];
+            const l = name.toLowerCase();
+            if (l.includes('config')) t.push('配置');
+            if (l.includes('drive') || l.includes('pan')) t.push('网盘');
+            return t.length ? t : ['其他'];
         };
         const isFeatured = name => {
-            const meta = getFileMeta(name);
-            if (meta && meta.featured === true) return true;
-            return state.featuredList.includes(name);
+            const meta = getMeta(name);
+            if (meta?.featured === true) return true;
+            return state.featured.includes(name);
         };
-        const getRawUrl = file => CONFIG.useCDN?`https://cdn.jsdelivr.net/gh/${CONFIG.githubOwner}/${CONFIG.githubRepo}@${CONFIG.githubBranch}/${file.path}`:(file.download_url||'');
 
-        function getFileMeta(name) {
-            if (!state.manifest || !state.manifest.files) return null;
-            return state.manifest.files[name] || null;
-        }
-
-        async function loadFeaturedList() {
+        async function loadConfigs() {
             try {
-                const url = `https://cdn.jsdelivr.net/gh/${CONFIG.githubOwner}/${CONFIG.githubRepo}@${CONFIG.githubBranch}/${CONFIG.dataPath}featured.json`;
-                const res = await fetch(url);
-                if (res.ok) {
-                    const data = await res.json();
-                    if (Array.isArray(data)) {
-                        state.featuredList = data;
-                    }
-                }
-            } catch(e) { state.featuredList = []; }
-        }
-
-        async function loadManifest() {
+                const manifestRes = await fetch(`https://cdn.jsdelivr.net/gh/${CONFIG.owner}/${CONFIG.repo}@${CONFIG.branch}/manifest.json`);
+                if (manifestRes.ok) state.manifest = await manifestRes.json();
+            } catch(e) {}
             try {
-                const url = `https://cdn.jsdelivr.net/gh/${CONFIG.githubOwner}/${CONFIG.githubRepo}@${CONFIG.githubBranch}/manifest.json`;
-                const res = await fetch(url);
-                if (res.ok) {
-                    state.manifest = await res.json();
+                const featRes = await fetch(`https://cdn.jsdelivr.net/gh/${CONFIG.owner}/${CONFIG.repo}@${CONFIG.branch}/${CONFIG.dataPath}featured.json`);
+                if (featRes.ok) {
+                    const data = await featRes.json();
+                    if (Array.isArray(data)) state.featured = data;
                 }
-            } catch(e) { state.manifest = null; }
+            } catch(e) {}
         }
 
-        async function loadGitHubAvatar() {
+        async function loadAvatar() {
             try {
                 const res = await fetch('https://api.github.com/users/FoodUI');
                 const data = await res.json();
@@ -543,209 +477,227 @@
             } catch(e) {}
         }
 
-        async function fetchFileCommitDate(filePath) {
+        async function fetchCommitDate(path) {
             try {
-                const apiUrl = `https://api.github.com/repos/${CONFIG.githubOwner}/${CONFIG.githubRepo}/commits?path=${encodeURIComponent(filePath)}&per_page=1&sha=${CONFIG.githubBranch}`;
-                const res = await fetch(apiUrl);
+                const res = await fetch(`https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/commits?path=${encodeURIComponent(path)}&per_page=1&sha=${CONFIG.branch}`);
                 if (!res.ok) return null;
                 const commits = await res.json();
-                if (commits.length > 0) return new Date(commits[0].commit.committer.date);
+                if (commits.length) return new Date(commits[0].commit.committer.date);
             } catch(e) {}
             return null;
         }
 
-        function renderFilterTags() {
-            const allTags=new Set();
-            state.allFiles.forEach(f => getFileTags(f.name).forEach(t => allTags.add(t)));
+        function updateFilterLabel() {
+            const label = document.querySelector('.filter-bar span:first-child');
+            if (label) label.textContent = t('filterLabel');
+        }
+
+        function renderFilters() {
+            const allTags = new Set();
+            state.files.forEach(f => getTags(f.name).forEach(t => allTags.add(t)));
             const tags = Array.from(allTags).sort();
-            let html = '<span>'+t('filterLabel')+'</span>';
+            let html = `<span>${t('filterLabel')}</span>`;
             const featuredActive = state.activeTags.includes('__featured__');
             html += `<span class="filter-tag${featuredActive?' active':''}" data-tag="__featured__">${t('featuredTag')}</span>`;
             tags.forEach(tag => {
                 const active = state.activeTags.includes(tag);
                 html += `<span class="filter-tag${active?' active':''}" data-tag="${tag}">${tag}</span>`;
             });
-            if(state.activeTags.length) html += `<button class="btn" id="clearTagsBtn">${t('clear')}</button>`;
-            dom.filterTagsBar.innerHTML = html;
+            if (state.activeTags.length) html += `<button class="btn" id="clearTagsBtn">${t('clear')}</button>`;
+            dom.filterBar.innerHTML = html;
 
-            document.querySelectorAll('.filter-tag').forEach(el => el.addEventListener('click', function(){
+            document.querySelectorAll('.filter-tag').forEach(el => el.addEventListener('click', function() {
                 const tag = this.dataset.tag;
                 if (tag === '__featured__') {
-                    if (state.activeTags.includes('__featured__')) {
-                        state.activeTags = state.activeTags.filter(t => t !== '__featured__');
-                    } else {
-                        state.activeTags.push('__featured__');
-                    }
+                    state.activeTags = state.activeTags.includes('__featured__') ?
+                        state.activeTags.filter(t => t !== '__featured__') : [...state.activeTags, '__featured__'];
                 } else {
-                    if (state.activeTags.includes(tag)) {
-                        state.activeTags = state.activeTags.filter(t => t !== tag);
-                    } else {
-                        state.activeTags.push(tag);
-                    }
+                    state.activeTags = state.activeTags.includes(tag) ?
+                        state.activeTags.filter(t => t !== tag) : [...state.activeTags, tag];
                 }
-                state.currentPage = 1;
+                state.page = 1;
                 applyFilters();
-                renderFilterTags();
+                renderFilters();
             }));
             const clear = document.getElementById('clearTagsBtn');
-            if(clear) clear.addEventListener('click', () => { state.activeTags = []; state.currentPage = 1; applyFilters(); renderFilterTags(); });
+            if (clear) clear.addEventListener('click', () => { state.activeTags = []; state.page = 1; applyFilters(); renderFilters(); });
         }
 
         function applyFilters() {
-            let files = [...state.allFiles];
-            const q = state.searchQuery.toLowerCase().trim();
-            if(q) files = files.filter(f => getDisplayName(f.name).toLowerCase().includes(q) || (getFileMeta(f.name)?.description || '').toLowerCase().includes(q));
-            const normalTags = state.activeTags.filter(t => t !== '__featured__');
-            if(normalTags.length) files = files.filter(f => normalTags.every(tag => getFileTags(f.name).includes(tag)));
-            if(state.activeTags.includes('__featured__')) {
-                files = files.filter(f => isFeatured(f.name));
+            let list = [...state.files];
+            const q = state.query.toLowerCase().trim();
+            if (q) list = list.filter(f => displayName(f.name).toLowerCase().includes(q) || (getMeta(f.name)?.description || '').toLowerCase().includes(q));
+            const normal = state.activeTags.filter(t => t !== '__featured__');
+            if (normal.length) list = list.filter(f => normal.every(tag => getTags(f.name).includes(tag)));
+            if (state.activeTags.includes('__featured__')) list = list.filter(f => isFeatured(f.name));
+            switch (state.sort) {
+                case 'name-asc': list.sort((a,b) => a.name.localeCompare(b.name)); break;
+                case 'name-desc': list.sort((a,b) => b.name.localeCompare(a.name)); break;
+                case 'size-asc': list.sort((a,b) => a.size - b.size); break;
+                case 'size-desc': list.sort((a,b) => b.size - a.size); break;
+                case 'time-desc': list.sort((a,b) => (b.lastCommit||0) - (a.lastCommit||0)); break;
+                case 'time-asc': list.sort((a,b) => (a.lastCommit||0) - (b.lastCommit||0)); break;
             }
-            switch(state.currentSort) {
-                case 'name-asc': files.sort((a,b) => a.name.localeCompare(b.name)); break;
-                case 'name-desc': files.sort((a,b) => b.name.localeCompare(a.name)); break;
-                case 'size-asc': files.sort((a,b) => a.size - b.size); break;
-                case 'size-desc': files.sort((a,b) => b.size - a.size); break;
-                case 'time-desc': files.sort((a,b) => (b.lastCommitDate||0) - (a.lastCommitDate||0)); break;
-                case 'time-asc': files.sort((a,b) => (a.lastCommitDate||0) - (b.lastCommitDate||0)); break;
-            }
-            state.filteredFiles = files;
-            state.currentPage = Math.min(state.currentPage, Math.max(1, Math.ceil(files.length / state.itemsPerPage)));
-            renderFileListPage();
-            updateStats(files);
+            state.filtered = list;
+            state.page = Math.min(state.page, Math.max(1, Math.ceil(list.length / state.perPage)));
+            renderPage();
+            updateStats(list);
         }
 
-        function renderFileListPage() {
-            if(state.isLoading){ dom.skeletonLoader.style.display='block'; dom.fileListContent.innerHTML=''; dom.emptyState.style.display='none'; dom.paginationContainer.innerHTML=''; return; }
-            dom.skeletonLoader.style.display='none';
-            const files = state.filteredFiles;
-            if(!files.length){ dom.fileListContent.innerHTML=''; dom.emptyState.style.display='block'; dom.paginationContainer.innerHTML=''; return; }
-            dom.emptyState.style.display='none';
-            const totalPages = Math.ceil(files.length / state.itemsPerPage);
-            const start = (state.currentPage - 1) * state.itemsPerPage;
-            const pageFiles = files.slice(start, start + state.itemsPerPage);
-            if(state.currentView === 'table') renderTable(pageFiles);
+        function renderPage() {
+            if (state.loading) {
+                dom.skeleton.style.display = 'block';
+                dom.fileContent.innerHTML = '';
+                dom.empty.style.display = 'none';
+                dom.pagination.innerHTML = '';
+                return;
+            }
+            dom.skeleton.style.display = 'none';
+            const files = state.filtered;
+            if (!files.length) {
+                dom.fileContent.innerHTML = '';
+                dom.empty.style.display = 'block';
+                dom.pagination.innerHTML = '';
+                return;
+            }
+            dom.empty.style.display = 'none';
+            const totalPages = Math.ceil(files.length / state.perPage);
+            const start = (state.page - 1) * state.perPage;
+            const pageFiles = files.slice(start, start + state.perPage);
+            if (state.view === 'table') renderTable(pageFiles);
             else renderCards(pageFiles);
-            window._foodHubFiles = {};
-            pageFiles.forEach(f => window._foodHubFiles[f.name] = f);
+            window._hubFiles = {};
+            pageFiles.forEach(f => window._hubFiles[f.name] = f);
             renderPagination(totalPages);
         }
 
-        function renderTable(files){
+        function renderTable(files) {
             let h = '<table class="file-table"><thead><tr><th>文件名</th><th>描述</th><th>大小</th><th>操作</th></tr></thead><tbody>';
             files.forEach(f => {
-                const meta = getFileMeta(f.name);
+                const meta = getMeta(f.name);
                 const desc = meta?.description || '—';
-                const tags = getFileTags(f.name);
-                const star = isFeatured(f.name) ? '<span class="star-icon">⭐</span>' : '';
-                h += `<tr><td><div class="file-name-cell">${star} ${escapeHTML(getDisplayName(f.name))} ${tags.map(t=>`<span class="badge" style="color:var(--md-sys-color-primary);">${t}</span>`).join('')}</div></td><td>${escapeHTML(desc)}</td><td>${formatBytes(f.size)}</td><td><button class="btn btn-filled" onclick="window._foodHubPreview('${f.name}')">${t('preview')}</button> <button class="btn" onclick="window._foodHubDownload('${f.name}')">${t('download')}</button></td></tr>`;
+                const tags = getTags(f.name);
+                const star = isFeatured(f.name) ? '<span class="star">⭐</span>' : '';
+                h += `<tr><td><div class="file-name">${star} ${escapeHTML(displayName(f.name))} ${tags.map(t=>`<span class="badge" style="color:var(--primary);">${t}</span>`).join('')}</div></td><td>${escapeHTML(desc)}</td><td>${formatBytes(f.size)}</td><td><button class="btn btn-primary" onclick="window._hubPreview('${f.name}')">${t('preview')}</button> <button class="btn" onclick="window._hubDownload('${f.name}')">${t('download')}</button></td></tr>`;
             });
             h += '</tbody></table>';
-            dom.fileListContent.innerHTML = h;
+            dom.fileContent.innerHTML = h;
         }
 
-        function renderCards(files){
-            let h = '<div class="file-cards-grid">';
+        function renderCards(files) {
+            let h = '<div class="file-grid">';
             files.forEach(f => {
-                const meta = getFileMeta(f.name);
+                const meta = getMeta(f.name);
                 const desc = meta?.description || '';
-                const tags = getFileTags(f.name);
-                const star = isFeatured(f.name) ? '<span class="star-icon">⭐</span>' : '';
-                h += `<div class="file-card"><div><strong>${star} ${escapeHTML(getDisplayName(f.name))}</strong></div><div>${escapeHTML(desc)}</div><div>${tags.join(' ')}</div><div>${formatBytes(f.size)}</div><div><button class="btn btn-filled" onclick="window._foodHubPreview('${f.name}')">${t('preview')}</button> <button class="btn" onclick="window._foodHubDownload('${f.name}')">${t('download')}</button></div></div>`;
+                const tags = getTags(f.name);
+                const star = isFeatured(f.name) ? '<span class="star">⭐</span>' : '';
+                h += `<div class="file-card"><div><strong>${star} ${escapeHTML(displayName(f.name))}</strong></div><div>${escapeHTML(desc)}</div><div>${tags.join(' ')}</div><div>${formatBytes(f.size)}</div><div><button class="btn btn-primary" onclick="window._hubPreview('${f.name}')">${t('preview')}</button> <button class="btn" onclick="window._hubDownload('${f.name}')">${t('download')}</button></div></div>`;
             });
             h += '</div>';
-            dom.fileListContent.innerHTML = h;
+            dom.fileContent.innerHTML = h;
         }
 
-        function renderPagination(totalPages){
-            let html = '';
-            if(totalPages <= 1){ dom.paginationContainer.innerHTML = ''; return; }
-            html += `<button class="page-btn" id="prevPageBtn" ${state.currentPage===1?'disabled':''}>${t('pagePrev')}</button>`;
-            for(let i=1; i<=totalPages; i++) html += `<button class="page-btn${i===state.currentPage?' active':''}" data-page="${i}">${i}</button>`;
-            html += `<button class="page-btn" id="nextPageBtn" ${state.currentPage===totalPages?'disabled':''}>${t('pageNext')}</button>`;
-            html += `<select class="page-size-select" id="pageSizeSelect" style="border-radius:20px;background:var(--card-bg);border:1px solid var(--card-border);color:var(--md-sys-color-on-surface);"><option value="10" ${state.itemsPerPage===10?'selected':''}>10</option><option value="20" ${state.itemsPerPage===20?'selected':''}>20</option><option value="30" ${state.itemsPerPage===30?'selected':''}>30</option><option value="50" ${state.itemsPerPage===50?'selected':''}>50</option></select>`;
-            dom.paginationContainer.innerHTML = html;
-            document.getElementById('prevPageBtn')?.addEventListener('click',()=>{ if(state.currentPage>1){ state.currentPage--; renderFileListPage(); } });
-            document.getElementById('nextPageBtn')?.addEventListener('click',()=>{ const total=Math.ceil(state.filteredFiles.length/state.itemsPerPage); if(state.currentPage<total){ state.currentPage++; renderFileListPage(); } });
-            document.querySelectorAll('.page-btn[data-page]').forEach(b=>b.addEventListener('click',function(){ state.currentPage=parseInt(this.dataset.page); renderFileListPage(); }));
-            document.getElementById('pageSizeSelect')?.addEventListener('change',function(){ state.itemsPerPage=parseInt(this.value); state.currentPage=1; applyFilters(); });
+        function renderPagination(totalPages) {
+            if (totalPages <= 1) { dom.pagination.innerHTML = ''; return; }
+            let html = `<button class="page-btn" id="prevBtn" ${state.page===1?'disabled':''}>${t('pagePrev')}</button>`;
+            for (let i=1; i<=totalPages; i++) html += `<button class="page-btn${i===state.page?' active':''}" data-page="${i}">${i}</button>`;
+            html += `<button class="page-btn" id="nextBtn" ${state.page===totalPages?'disabled':''}>${t('pageNext')}</button>`;
+            html += `<select class="page-btn" id="perPageSelect"><option value="10" ${state.perPage===10?'selected':''}>10</option><option value="20" ${state.perPage===20?'selected':''}>20</option><option value="30" ${state.perPage===30?'selected':''}>30</option><option value="50" ${state.perPage===50?'selected':''}>50</option></select>`;
+            dom.pagination.innerHTML = html;
+            document.getElementById('prevBtn')?.addEventListener('click', ()=>{ if(state.page>1){ state.page--; renderPage(); } });
+            document.getElementById('nextBtn')?.addEventListener('click', ()=>{ if(state.page<totalPages){ state.page++; renderPage(); } });
+            document.querySelectorAll('.page-btn[data-page]').forEach(b => b.addEventListener('click', function(){ state.page = parseInt(this.dataset.page); renderPage(); }));
+            document.getElementById('perPageSelect')?.addEventListener('change', function(){ state.perPage = parseInt(this.value); state.page = 1; applyFilters(); });
         }
 
-        function updateStats(files){
+        function updateStats(files) {
             dom.statTotal.textContent = files.length;
-            dom.statTotalSize.textContent = formatBytes(files.reduce((s,f)=>s+f.size, 0));
+            dom.statSize.textContent = formatBytes(files.reduce((s,f)=>s+f.size,0));
             dom.statNew.textContent = files.filter(f => {
-                const m = getFileMeta(f.name);
-                return m?.addedDate && Date.now() - new Date(m.addedDate).getTime() < CONFIG.newFileThreshold;
+                const m = getMeta(f.name);
+                return m?.addedDate && Date.now() - new Date(m.addedDate).getTime() < CONFIG.newThreshold;
             }).length || 0;
             dom.statFeatured.textContent = files.filter(f => isFeatured(f.name)).length;
         }
 
-        function escapeHTML(s){ const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+        function escapeHTML(str) { const d = document.createElement('div'); d.textContent = str; return d.innerHTML; }
 
-        window._foodHubPreview = function(name){ const f = window._foodHubFiles[name]; if(f) openPreview(f); };
-        window._foodHubDownload = function(name){ const f = window._foodHubFiles[name]; if(f) triggerDownload(f); };
+        window._hubPreview = function(name) { const f = window._hubFiles[name]; if(f) openPreview(f); };
+        window._hubDownload = function(name) { const f = window._hubFiles[name]; if(f) downloadFile(f); };
 
-        function openPreview(file){
+        function openPreview(file) {
             state.previewFile = file;
-            document.getElementById('previewModalTitle').textContent = `📄 ${file.name}`;
+            document.getElementById('previewTitle').textContent = `📄 ${file.name}`;
             dom.previewCode.textContent = '加载中...';
             dom.previewModal.classList.add('active');
             fetch(getRawUrl(file))
                 .then(r => r.text())
                 .then(text => { dom.previewCode.textContent = text; })
-                .catch(err => { dom.previewCode.textContent = `加载失败: ${err.message}`; });
+                .catch(e => { dom.previewCode.textContent = `加载失败: ${e.message}`; });
         }
-        function closePreview(){ dom.previewModal.classList.remove('active'); }
-        function triggerDownload(file){ const a = document.createElement('a'); a.href = getRawUrl(file); a.download = file.name; a.click(); toast('下载已开始'); }
-        function toast(msg){ const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg; document.getElementById('toastContainer').appendChild(t); setTimeout(()=>t.remove(), 2500); }
+        function closePreview() { dom.previewModal.classList.remove('active'); }
+        function downloadFile(file) {
+            const a = document.createElement('a');
+            a.href = getRawUrl(file);
+            a.download = file.name;
+            a.click();
+            toast('下载已开始');
+        }
+        function toast(msg) {
+            const t = document.createElement('div');
+            t.className = 'toast';
+            t.textContent = msg;
+            document.getElementById('toastContainer').appendChild(t);
+            setTimeout(() => t.remove(), 2500);
+        }
 
-        async function fetchFiles(force = false){
-            if(!force){
-                const c = JSON.parse(localStorage.getItem('foodhub_files')||'null');
-                if(c && Date.now()-c.t < CONFIG.cacheTTL){
-                    state.allFiles = c.v;
-                    state.isLoading = false;
+        async function fetchFiles(force = false) {
+            if (!force) {
+                const cached = JSON.parse(localStorage.getItem('foodhub_files') || 'null');
+                if (cached && Date.now() - cached.t < CONFIG.cacheTTL) {
+                    state.files = cached.v;
+                    state.loading = false;
                     applyFilters();
-                    renderFilterTags();
+                    renderFilters();
                     return;
                 }
             }
-            state.isLoading = true; renderFileListPage();
-            try{
-                const res = await fetch(`https://api.github.com/repos/${CONFIG.githubOwner}/${CONFIG.githubRepo}/contents/${CONFIG.dataPath}?ref=${CONFIG.githubBranch}`);
-                if(!res.ok) throw new Error(`HTTP ${res.status} (可能路径错误或为空)`);
+            state.loading = true; renderPage();
+            try {
+                const res = await fetch(`https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.dataPath}?ref=${CONFIG.branch}`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 const data = await res.json();
-                if(!Array.isArray(data)) throw new Error('路径不是目录');
+                if (!Array.isArray(data)) throw new Error('路径不是目录');
                 const files = data.filter(i => i.type === 'file').map(i => ({
-                    name: i.name, path: i.path, size: i.size, download_url: i.download_url, lastCommitDate: null
+                    name: i.name, path: i.path, size: i.size, download_url: i.download_url, lastCommit: null
                 }));
-                // 获取每个文件的最后提交时间
-                const commitPromises = files.map(async (file) => {
-                    const date = await fetchFileCommitDate(file.path);
-                    file.lastCommitDate = date ? date.getTime() : null;
+                const commits = files.map(async f => {
+                    const d = await fetchCommitDate(f.path);
+                    f.lastCommit = d ? d.getTime() : null;
                 });
-                await Promise.allSettled(commitPromises);
-                state.allFiles = files;
-                localStorage.setItem('foodhub_files', JSON.stringify({t: Date.now(), v: files}));
-            } catch(e){
-                state.allFiles = [];
-                console.error('获取文件失败:', e);
+                await Promise.allSettled(commits);
+                state.files = files;
+                localStorage.setItem('foodhub_files', JSON.stringify({ t: Date.now(), v: files }));
+            } catch(e) {
+                state.files = [];
                 toast(`获取文件失败: ${e.message}`);
             }
-            state.isLoading = false;
-            state.currentPage = 1;
+            state.loading = false;
+            state.page = 1;
             applyFilters();
-            renderFilterTags();
+            renderFilters();
         }
 
-        function bindEvents(){
-            dom.searchInput.addEventListener('input',()=>{ state.searchQuery = dom.searchInput.value; state.currentPage = 1; applyFilters(); });
-            dom.sortSelect.addEventListener('change',()=>{ state.currentSort = dom.sortSelect.value; state.currentPage = 1; applyFilters(); });
-            dom.viewToggleBtns.forEach(b => b.addEventListener('click', function(){
-                dom.viewToggleBtns.forEach(x => x.classList.remove('active')); this.classList.add('active');
-                state.currentView = this.dataset.view; renderFileListPage();
+        function bindEvents() {
+            dom.searchInput.addEventListener('input', () => { state.query = dom.searchInput.value; state.page = 1; applyFilters(); });
+            dom.sortSelect.addEventListener('change', () => { state.sort = dom.sortSelect.value; state.page = 1; applyFilters(); });
+            dom.viewBtns.forEach(b => b.addEventListener('click', function() {
+                dom.viewBtns.forEach(x => x.classList.remove('active'));
+                this.classList.add('active');
+                state.view = this.dataset.view;
+                renderPage();
             }));
-            dom.refreshBtn.addEventListener('click', async function(){
+            dom.refreshBtn.addEventListener('click', async function() {
                 const icon = document.getElementById('refreshIcon');
                 icon.innerHTML = `<svg class="icon" viewBox="0 0 24 24" style="animation: spin 1s linear infinite;"><path d="M21 10.5a9 9 0 0 0-15.6-5.4"/><polyline points="21 4 21 10.5 14.5 10.5"/><path d="M3 13.5a9 9 0 0 0 15.6 5.4"/><polyline points="3 20 3 13.5 9.5 13.5"/></svg>`;
                 this.disabled = true;
@@ -756,43 +708,49 @@
             });
             document.getElementById('closePreviewBtn').addEventListener('click', closePreview);
             dom.previewModal.addEventListener('click', e => { if(e.target === dom.previewModal) closePreview(); });
-            document.getElementById('themeSelect').addEventListener('change', function(){ applyTheme(this.value); });
-            document.getElementById('langSelect').addEventListener('change', function(){
+            document.getElementById('themeSelect').addEventListener('change', function() { applyTheme(this.value); });
+            document.getElementById('langSelect').addEventListener('change', function() {
                 const val = this.value;
-                if(val === 'auto') currentLang = detectLang(); else currentLang = val;
-                localStorage.setItem('foodhub_lang', val === 'auto' ? 'auto' : val);
-                applyLang(); renderFilterTags(); renderFileListPage();
+                lang = val === 'auto' ? detectLang() : val;
+                localStorage.setItem('foodhub_lang', val);
+                applyLang();
+                renderFilters();
+                renderPage();
             });
             document.getElementById('copyContentBtn').addEventListener('click', () => {
                 const text = dom.previewCode.textContent;
-                if (text && text !== '加载中...') {
-                    navigator.clipboard.writeText(text).then(() => toast('内容已复制'));
-                }
+                if (text && text !== '加载中...') navigator.clipboard.writeText(text).then(() => toast('内容已复制'));
             });
-            document.getElementById('copyRawUrlBtn').addEventListener('click', () => {
-                if (state.previewFile) {
-                    navigator.clipboard.writeText(getRawUrl(state.previewFile)).then(() => toast('链接已复制'));
-                }
+            document.getElementById('copyLinkBtn').addEventListener('click', () => {
+                if (state.previewFile) navigator.clipboard.writeText(getRawUrl(state.previewFile)).then(() => toast('链接已复制'));
             });
-            document.getElementById('downloadFromPreviewBtn').addEventListener('click', () => {
-                if (state.previewFile) triggerDownload(state.previewFile);
+            document.getElementById('downloadBtn').addEventListener('click', () => {
+                if (state.previewFile) downloadFile(state.previewFile);
             });
         }
 
-        async function init(){
+        async function init() {
             inferRepo();
             const savedTheme = detectTheme();
             applyTheme(savedTheme);
             document.getElementById('themeSelect').value = savedTheme;
             const savedLang = localStorage.getItem('foodhub_lang') || 'auto';
             document.getElementById('langSelect').value = savedLang;
-            currentLang = savedLang === 'auto' ? detectLang() : savedLang;
+            lang = savedLang === 'auto' ? detectLang() : savedLang;
             applyLang();
             bindEvents();
-            await Promise.all([loadManifest(), loadFeaturedList()]);
+            await loadConfigs();
             await fetchFiles();
-            loadGitHubAvatar();
+            loadAvatar();
+
+            // 视频背景回退
+            const video = document.getElementById('bgVideo');
+            const gradient = document.getElementById('bgGradient');
+            video.addEventListener('loadeddata', () => { gradient.style.display = 'none'; });
+            video.addEventListener('error', () => { video.style.display = 'none'; gradient.style.display = 'block'; });
+            if (video.readyState < 2) { video.style.display = 'none'; gradient.style.display = 'block'; }
         }
+
         init();
     })();
     </script>
