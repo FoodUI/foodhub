@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodHub · 资源分享站</title>
-    <meta name="description" content="FoodHub 资源分享站 · 高透玻璃设计 · 菜鸟教程风格">
+    <meta name="description" content="FoodHub 资源分享站 · 高透玻璃设计">
     <meta name="author" content="FoodUI">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
     <style>
@@ -89,7 +89,6 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
 
-        /* 顶部导航 */
         .navbar {
             display: flex; align-items: center; justify-content: space-between; gap: 16px;
             padding: 12px 20px; margin-top: 16px;
@@ -120,7 +119,6 @@
 
         .main-layout { display: flex; gap: 20px; margin-top: 20px; min-height: 70vh; }
 
-        /* 左侧分类菜单 */
         .sidebar {
             width: 260px; flex-shrink: 0;
             background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -141,24 +139,17 @@
         }
         .menu-link:hover, .menu-link.active { background: var(--primary); color: white; }
 
-        /* 右侧内容 */
         .content-area {
             flex: 1; min-width: 0;
             background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             border-radius: var(--radius-lg); border: 1px solid var(--glass-border);
             box-shadow: var(--glass-shadow); padding: 24px;
         }
-        .breadcrumb {
-            font-size: 0.8rem; color: var(--on-surface-variant); margin-bottom: 16px;
-            padding-bottom: 8px; border-bottom: 1px solid var(--glass-border);
-        }
-        .breadcrumb a { color: var(--primary); text-decoration: none; }
         .content-title {
             font-size: 1.8rem; font-weight: 700; color: var(--on-surface);
             margin-bottom: 16px; text-shadow: var(--text-shadow);
         }
 
-        /* 资源卡片网格 */
         .resource-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -197,6 +188,28 @@
         .btn-primary { background: var(--primary); color: var(--on-primary); }
         .btn-primary:hover { background: #0055dd; }
 
+        /* 预览模态框 */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none; transition: 0.3s; backdrop-filter: blur(8px);
+        }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal {
+            background: var(--glass-bg); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+            border-radius: 28px; max-width: 800px; width: 100%; max-height: 85vh;
+            display: flex; flex-direction: column; box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            border: 1px solid var(--glass-border);
+        }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--glass-border); }
+        .modal-body { flex: 1; overflow: auto; padding: 0; }
+        .modal-body pre {
+            margin: 0; padding: 20px; background: rgba(0,0,0,0.2); color: var(--on-surface);
+            font-family: var(--mono); font-size: 0.85rem; line-height: 1.7;
+            white-space: pre-wrap; word-break: break-word; min-height: 300px;
+        }
+        .modal-footer { display: flex; justify-content: flex-end; gap: 8px; padding: 12px 20px; border-top: 1px solid var(--glass-border); }
+
         .footer {
             text-align: center; padding: 28px; color: var(--on-surface-variant);
             font-size: 0.8rem; text-shadow: var(--text-shadow); margin-top: 20px;
@@ -227,7 +240,6 @@
     <div class="gradient-bg" id="bgGradient"></div>
 
     <div class="container">
-        <!-- 顶部导航 -->
         <nav class="navbar">
             <a href="https://foodui.github.io" class="navbar-brand">📦 FoodHub</a>
             <div class="navbar-links">
@@ -253,7 +265,6 @@
         <button class="mobile-menu-toggle" id="menuToggle">☰ 分类</button>
 
         <div class="main-layout">
-            <!-- 左侧分类 -->
             <aside class="sidebar" id="sidebar">
                 <div class="sidebar-title" id="sidebarTitle">资源分类</div>
                 <ul class="menu-list" id="menuList">
@@ -265,11 +276,7 @@
                 </ul>
             </aside>
 
-            <!-- 右侧内容 -->
-            <main class="content-area" id="contentArea">
-                <div class="breadcrumb">
-                    <a href="https://foodui.github.io">首页</a> / <span id="currentCategory">配置文件</span>
-                </div>
+            <main class="content-area">
                 <h1 class="content-title" id="categoryTitle">⚙️ 配置文件</h1>
                 <div class="resource-grid" id="resourceGrid"></div>
             </main>
@@ -278,6 +285,23 @@
         <footer class="footer">
             <p>© FoodHub · 由 <a href="https://deepseek.com" target="_blank">DeepSeek</a> 生成</p>
         </footer>
+    </div>
+
+    <!-- 预览模态框 -->
+    <div class="modal-overlay" id="previewModal">
+        <div class="modal">
+            <div class="modal-header">
+                <span id="previewTitle">📄 预览</span>
+                <button class="btn" id="closePreviewBtn" style="padding:6px 12px;">✕</button>
+            </div>
+            <div class="modal-body">
+                <pre><code id="previewCode"></code></pre>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="copyContentBtn">📋 复制</button>
+                <button class="btn btn-primary" id="downloadFromPreviewBtn">⬇️ 下载</button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -305,46 +329,46 @@
             themeSelect.value = savedTheme;
             themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
 
-            // 多语言资源数据
+            // 资源数据（包含预览内容示例）
             const resourceData = {
                 zh: {
                     categories: {
-                        config: { title: '⚙️ 配置文件', breadcrumb: '配置文件' },
-                        template: { title: '📄 模板文件', breadcrumb: '模板文件' },
-                        tool: { title: '🔧 实用工具', breadcrumb: '实用工具' },
-                        drive: { title: '☁️ 网盘资源', breadcrumb: '网盘资源' },
-                        other: { title: '📦 其他资源', breadcrumb: '其他资源' }
+                        config: { title: '⚙️ 配置文件' },
+                        template: { title: '📄 模板文件' },
+                        tool: { title: '🔧 实用工具' },
+                        drive: { title: '☁️ 网盘资源' },
+                        other: { title: '📦 其他资源' }
                     },
                     items: [
-                        { category: 'config', name: 'Nginx 配置模板', desc: '高性能 Web 服务器推荐配置', size: '2.1 KB', dl: '#' },
-                        { category: 'config', name: 'VSCode 设置分享', desc: '优化后的编辑器配置文件', size: '4.5 KB', dl: '#' },
-                        { category: 'template', name: 'HTML5 博客模板', desc: '响应式、简洁的个人博客模板', size: '12.3 KB', dl: '#' },
-                        { category: 'template', name: '简历模板 (中文)', desc: '简约大方的中文简历 LaTeX 源码', size: '8.7 KB', dl: '#' },
-                        { category: 'tool', name: '正则表达式速查表', desc: '常用正则表达式合集 (PDF)', size: '340 KB', dl: '#' },
-                        { category: 'tool', name: 'Git 命令速查卡', desc: '常用 Git 命令快速参考', size: '180 KB', dl: '#' },
-                        { category: 'drive', name: '网盘资源合集', desc: '各类网盘资源链接整理', size: '1.2 MB', dl: '#' },
-                        { category: 'other', name: '学习路线图', desc: '前端/后端学习路径思维导图', size: '450 KB', dl: '#' },
-                        { category: 'other', name: 'API 文档合集', desc: 'RESTful API 设计规范与示例', size: '3.6 MB', dl: '#' }
+                        { category: 'config', name: 'Nginx 配置模板', desc: '高性能 Web 服务器推荐配置', size: '2.1 KB', dl: '#', previewContent: 'server {\n    listen 80;\n    server_name example.com;\n    root /var/www/html;\n    index index.html;\n}' },
+                        { category: 'config', name: 'VSCode 设置分享', desc: '优化后的编辑器配置文件', size: '4.5 KB', dl: '#', previewContent: '{\n    "editor.fontSize": 14,\n    "editor.tabSize": 2,\n    "editor.wordWrap": "on"\n}' },
+                        { category: 'template', name: 'HTML5 博客模板', desc: '响应式、简洁的个人博客模板', size: '12.3 KB', dl: '#', previewContent: '<!DOCTYPE html>\n<html>\n<head><title>My Blog</title></head>\n<body>\n  <h1>Welcome</h1>\n</body>\n</html>' },
+                        { category: 'template', name: '简历模板 (中文)', desc: '简约大方的中文简历 LaTeX 源码', size: '8.7 KB', dl: '#', previewContent: '\\documentclass{article}\n\\begin{document}\n\\section{个人信息}\n姓名：张三\n\\end{document}' },
+                        { category: 'tool', name: '正则表达式速查表', desc: '常用正则表达式合集 (PDF)', size: '340 KB', dl: '#', previewContent: '(PDF 文件，此处为示例文本)\n正则表达式是一种强大的文本匹配工具...' },
+                        { category: 'tool', name: 'Git 命令速查卡', desc: '常用 Git 命令快速参考', size: '180 KB', dl: '#', previewContent: 'git init           # 初始化仓库\ngit add .          # 暂存所有文件\ngit commit -m "init" # 提交' },
+                        { category: 'drive', name: '网盘资源合集', desc: '各类网盘资源链接整理', size: '1.2 MB', dl: '#', previewContent: '资源列表：\n1. 设计素材包\n2. 软件安装包\n3. 电子书合集' },
+                        { category: 'other', name: '学习路线图', desc: '前端/后端学习路径思维导图', size: '450 KB', dl: '#', previewContent: '前端路线：HTML → CSS → JavaScript → React → Node.js' },
+                        { category: 'other', name: 'API 文档合集', desc: 'RESTful API 设计规范与示例', size: '3.6 MB', dl: '#', previewContent: 'GET /api/users\nPOST /api/users\nContent-Type: application/json' }
                     ]
                 },
                 en: {
                     categories: {
-                        config: { title: '⚙️ Config Files', breadcrumb: 'Config Files' },
-                        template: { title: '📄 Templates', breadcrumb: 'Templates' },
-                        tool: { title: '🔧 Tools', breadcrumb: 'Tools' },
-                        drive: { title: '☁️ Drive Resources', breadcrumb: 'Drive Resources' },
-                        other: { title: '📦 Others', breadcrumb: 'Others' }
+                        config: { title: '⚙️ Config Files' },
+                        template: { title: '📄 Templates' },
+                        tool: { title: '🔧 Tools' },
+                        drive: { title: '☁️ Drive Resources' },
+                        other: { title: '📦 Others' }
                     },
                     items: [
-                        { category: 'config', name: 'Nginx Config', desc: 'High-performance web server config', size: '2.1 KB', dl: '#' },
-                        { category: 'config', name: 'VSCode Settings', desc: 'Optimized editor settings', size: '4.5 KB', dl: '#' },
-                        { category: 'template', name: 'HTML5 Blog Template', desc: 'Responsive and clean blog template', size: '12.3 KB', dl: '#' },
-                        { category: 'template', name: 'Resume Template', desc: 'Simple LaTeX resume template', size: '8.7 KB', dl: '#' },
-                        { category: 'tool', name: 'Regex Cheat Sheet', desc: 'Common regular expressions (PDF)', size: '340 KB', dl: '#' },
-                        { category: 'tool', name: 'Git Cheat Sheet', desc: 'Quick reference for Git commands', size: '180 KB', dl: '#' },
-                        { category: 'drive', name: 'Drive Collection', desc: 'Various drive resource links', size: '1.2 MB', dl: '#' },
-                        { category: 'other', name: 'Learning Roadmap', desc: 'Frontend/Backend learning paths', size: '450 KB', dl: '#' },
-                        { category: 'other', name: 'API Documentation', desc: 'RESTful API design guide', size: '3.6 MB', dl: '#' }
+                        { category: 'config', name: 'Nginx Config', desc: 'High-performance web server config', size: '2.1 KB', dl: '#', previewContent: 'server {\n    listen 80;\n    server_name example.com;\n    root /var/www/html;\n    index index.html;\n}' },
+                        { category: 'config', name: 'VSCode Settings', desc: 'Optimized editor settings', size: '4.5 KB', dl: '#', previewContent: '{\n    "editor.fontSize": 14,\n    "editor.tabSize": 2,\n    "editor.wordWrap": "on"\n}' },
+                        { category: 'template', name: 'HTML5 Blog Template', desc: 'Responsive and clean blog template', size: '12.3 KB', dl: '#', previewContent: '<!DOCTYPE html>\n<html>\n<head><title>My Blog</title></head>\n<body>\n  <h1>Welcome</h1>\n</body>\n</html>' },
+                        { category: 'template', name: 'Resume Template', desc: 'Simple LaTeX resume template', size: '8.7 KB', dl: '#', previewContent: '\\documentclass{article}\n\\begin{document}\n\\section{Personal Info}\nName: John Doe\n\\end{document}' },
+                        { category: 'tool', name: 'Regex Cheat Sheet', desc: 'Common regular expressions (PDF)', size: '340 KB', dl: '#', previewContent: '(PDF file, sample text)\nRegular expressions are powerful...' },
+                        { category: 'tool', name: 'Git Cheat Sheet', desc: 'Quick reference for Git commands', size: '180 KB', dl: '#', previewContent: 'git init\n git add .\n git commit -m "init"' },
+                        { category: 'drive', name: 'Drive Collection', desc: 'Various drive resource links', size: '1.2 MB', dl: '#', previewContent: 'Resource list:\n1. Design assets\n2. Software packages\n3. eBooks' },
+                        { category: 'other', name: 'Learning Roadmap', desc: 'Frontend/Backend learning paths', size: '450 KB', dl: '#', previewContent: 'Frontend: HTML → CSS → JavaScript → React → Node.js' },
+                        { category: 'other', name: 'API Documentation', desc: 'RESTful API design guide', size: '3.6 MB', dl: '#', previewContent: 'GET /api/users\nPOST /api/users\nContent-Type: application/json' }
                     ]
                 }
             };
@@ -353,16 +377,20 @@
             const langSelect = document.getElementById('langSelect');
             const sidebarTitleEl = document.getElementById('sidebarTitle');
             const categoryTitleEl = document.getElementById('categoryTitle');
-            const currentCategoryEl = document.getElementById('currentCategory');
             const resourceGrid = document.getElementById('resourceGrid');
             const sidebar = document.getElementById('sidebar');
+
+            // 预览相关元素
+            const previewModal = document.getElementById('previewModal');
+            const previewCode = document.getElementById('previewCode');
+            const previewTitle = document.getElementById('previewTitle');
+            let currentPreviewResource = null;
 
             function renderCategory(category) {
                 const lang = currentLang;
                 const data = resourceData[lang];
                 const catInfo = data.categories[category] || data.categories.config;
                 categoryTitleEl.textContent = catInfo.title;
-                currentCategoryEl.textContent = catInfo.breadcrumb;
 
                 const items = data.items.filter(item => item.category === category);
                 if (items.length === 0) {
@@ -370,7 +398,7 @@
                     return;
                 }
                 let html = '';
-                items.forEach(item => {
+                items.forEach((item, index) => {
                     html += `
                     <div class="resource-card">
                         <div class="resource-name">
@@ -381,6 +409,7 @@
                             <span>📦 ${item.size}</span>
                         </div>
                         <div class="resource-actions">
+                            <button class="btn" onclick="window._previewResource('${category}', ${index})">👁️ 预览</button>
                             <a href="${item.dl}" class="btn btn-primary" target="_blank">⬇️ 下载</a>
                         </div>
                     </div>`;
@@ -388,14 +417,40 @@
                 resourceGrid.innerHTML = html;
             }
 
-            // 高亮菜单
+            // 全局预览函数
+            window._previewResource = function(category, index) {
+                const data = resourceData[currentLang];
+                const item = data.items.filter(it => it.category === category)[index];
+                if (!item) return;
+                currentPreviewResource = item;
+                previewTitle.textContent = `📄 ${item.name}`;
+                previewCode.textContent = '加载中...';
+                previewModal.classList.add('active');
+
+                // 如果有 previewContent 直接显示，否则尝试从 dl 链接获取
+                if (item.previewContent) {
+                    previewCode.textContent = item.previewContent;
+                } else if (item.dl && item.dl !== '#') {
+                    fetch(item.dl)
+                        .then(r => r.text())
+                        .then(text => { previewCode.textContent = text; })
+                        .catch(() => { previewCode.textContent = '无法加载预览内容'; });
+                } else {
+                    previewCode.textContent = '暂无预览内容';
+                }
+            };
+
+            function closePreview() {
+                previewModal.classList.remove('active');
+                currentPreviewResource = null;
+            }
+
             function highlightMenu(category) {
                 document.querySelectorAll('.menu-link').forEach(link => link.classList.remove('active'));
                 const activeLink = document.querySelector(`.menu-link[data-category="${category}"]`);
                 if (activeLink) activeLink.classList.add('active');
             }
 
-            // 菜单点击事件
             const menuLinks = document.querySelectorAll('.menu-link');
             menuLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -403,13 +458,10 @@
                     const category = this.dataset.category;
                     highlightMenu(category);
                     renderCategory(category);
-                    if (window.innerWidth <= 768) {
-                        sidebar.classList.remove('open');
-                    }
+                    if (window.innerWidth <= 768) sidebar.classList.remove('open');
                 });
             });
 
-            // 语言切换
             function setLangFromStorageOrBrowser() {
                 const stored = localStorage.getItem('foodhub_lang');
                 if (stored === 'zh' || stored === 'en') {
@@ -441,20 +493,41 @@
 
             setLangFromStorageOrBrowser();
 
-            // 移动端菜单切换
             const menuToggle = document.getElementById('menuToggle');
-            menuToggle.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
+            menuToggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+
+            // 预览关闭按钮
+            document.getElementById('closePreviewBtn').addEventListener('click', closePreview);
+            previewModal.addEventListener('click', (e) => {
+                if (e.target === previewModal) closePreview();
+            });
+            document.getElementById('copyContentBtn').addEventListener('click', () => {
+                const text = previewCode.textContent;
+                if (text && text !== '加载中...') navigator.clipboard.writeText(text).then(() => toast('内容已复制'));
+            });
+            document.getElementById('downloadFromPreviewBtn').addEventListener('click', () => {
+                if (currentPreviewResource) {
+                    const a = document.createElement('a');
+                    a.href = currentPreviewResource.dl;
+                    a.download = currentPreviewResource.name;
+                    a.click();
+                    toast('下载已开始');
+                }
             });
 
-            // 视频背景回退
+            function toast(msg) {
+                const t = document.createElement('div');
+                t.className = 'toast'; t.textContent = msg;
+                document.body.appendChild(t);
+                setTimeout(() => t.remove(), 2000);
+            }
+
             const video = document.getElementById('bgVideo');
             const gradient = document.getElementById('bgGradient');
             video.addEventListener('loadeddata', () => { gradient.style.display = 'none'; });
             video.addEventListener('error', () => { video.style.display = 'none'; gradient.style.display = 'block'; });
             if (video.readyState < 2) { video.style.display = 'none'; gradient.style.display = 'block'; }
 
-            // 初始加载第一个分类
             renderCategory('config');
         })();
     </script>
