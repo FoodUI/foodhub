@@ -234,9 +234,11 @@
     </style>
 </head>
 <body>
+    <!-- 视频背景，静音循环播放 -->
     <video class="video-bg" id="bgVideo" autoplay muted loop playsinline>
         <source src="background.mp4" type="video/mp4">
     </video>
+    <!-- 动态渐变背景（回退） -->
     <div class="gradient-bg" id="bgGradient"></div>
 
     <div class="container">
@@ -329,7 +331,7 @@
             themeSelect.value = savedTheme;
             themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
 
-            // 资源数据（包含预览内容示例）
+            // 资源数据（包含预览内容）
             const resourceData = {
                 zh: {
                     categories: {
@@ -344,8 +346,8 @@
                         { category: 'config', name: 'VSCode 设置分享', desc: '优化后的编辑器配置文件', size: '4.5 KB', dl: '#', previewContent: '{\n    "editor.fontSize": 14,\n    "editor.tabSize": 2,\n    "editor.wordWrap": "on"\n}' },
                         { category: 'template', name: 'HTML5 博客模板', desc: '响应式、简洁的个人博客模板', size: '12.3 KB', dl: '#', previewContent: '<!DOCTYPE html>\n<html>\n<head><title>My Blog</title></head>\n<body>\n  <h1>Welcome</h1>\n</body>\n</html>' },
                         { category: 'template', name: '简历模板 (中文)', desc: '简约大方的中文简历 LaTeX 源码', size: '8.7 KB', dl: '#', previewContent: '\\documentclass{article}\n\\begin{document}\n\\section{个人信息}\n姓名：张三\n\\end{document}' },
-                        { category: 'tool', name: '正则表达式速查表', desc: '常用正则表达式合集 (PDF)', size: '340 KB', dl: '#', previewContent: '(PDF 文件，此处为示例文本)\n正则表达式是一种强大的文本匹配工具...' },
-                        { category: 'tool', name: 'Git 命令速查卡', desc: '常用 Git 命令快速参考', size: '180 KB', dl: '#', previewContent: 'git init           # 初始化仓库\ngit add .          # 暂存所有文件\ngit commit -m "init" # 提交' },
+                        { category: 'tool', name: '正则表达式速查表', desc: '常用正则表达式合集 (PDF)', size: '340 KB', dl: '#', previewContent: '正则表达式是一种强大的文本匹配工具...' },
+                        { category: 'tool', name: 'Git 命令速查卡', desc: '常用 Git 命令快速参考', size: '180 KB', dl: '#', previewContent: 'git init\n git add .\n git commit -m "init"' },
                         { category: 'drive', name: '网盘资源合集', desc: '各类网盘资源链接整理', size: '1.2 MB', dl: '#', previewContent: '资源列表：\n1. 设计素材包\n2. 软件安装包\n3. 电子书合集' },
                         { category: 'other', name: '学习路线图', desc: '前端/后端学习路径思维导图', size: '450 KB', dl: '#', previewContent: '前端路线：HTML → CSS → JavaScript → React → Node.js' },
                         { category: 'other', name: 'API 文档合集', desc: 'RESTful API 设计规范与示例', size: '3.6 MB', dl: '#', previewContent: 'GET /api/users\nPOST /api/users\nContent-Type: application/json' }
@@ -364,7 +366,7 @@
                         { category: 'config', name: 'VSCode Settings', desc: 'Optimized editor settings', size: '4.5 KB', dl: '#', previewContent: '{\n    "editor.fontSize": 14,\n    "editor.tabSize": 2,\n    "editor.wordWrap": "on"\n}' },
                         { category: 'template', name: 'HTML5 Blog Template', desc: 'Responsive and clean blog template', size: '12.3 KB', dl: '#', previewContent: '<!DOCTYPE html>\n<html>\n<head><title>My Blog</title></head>\n<body>\n  <h1>Welcome</h1>\n</body>\n</html>' },
                         { category: 'template', name: 'Resume Template', desc: 'Simple LaTeX resume template', size: '8.7 KB', dl: '#', previewContent: '\\documentclass{article}\n\\begin{document}\n\\section{Personal Info}\nName: John Doe\n\\end{document}' },
-                        { category: 'tool', name: 'Regex Cheat Sheet', desc: 'Common regular expressions (PDF)', size: '340 KB', dl: '#', previewContent: '(PDF file, sample text)\nRegular expressions are powerful...' },
+                        { category: 'tool', name: 'Regex Cheat Sheet', desc: 'Common regular expressions (PDF)', size: '340 KB', dl: '#', previewContent: 'Regular expressions are powerful...' },
                         { category: 'tool', name: 'Git Cheat Sheet', desc: 'Quick reference for Git commands', size: '180 KB', dl: '#', previewContent: 'git init\n git add .\n git commit -m "init"' },
                         { category: 'drive', name: 'Drive Collection', desc: 'Various drive resource links', size: '1.2 MB', dl: '#', previewContent: 'Resource list:\n1. Design assets\n2. Software packages\n3. eBooks' },
                         { category: 'other', name: 'Learning Roadmap', desc: 'Frontend/Backend learning paths', size: '450 KB', dl: '#', previewContent: 'Frontend: HTML → CSS → JavaScript → React → Node.js' },
@@ -380,7 +382,6 @@
             const resourceGrid = document.getElementById('resourceGrid');
             const sidebar = document.getElementById('sidebar');
 
-            // 预览相关元素
             const previewModal = document.getElementById('previewModal');
             const previewCode = document.getElementById('previewCode');
             const previewTitle = document.getElementById('previewTitle');
@@ -417,7 +418,6 @@
                 resourceGrid.innerHTML = html;
             }
 
-            // 全局预览函数
             window._previewResource = function(category, index) {
                 const data = resourceData[currentLang];
                 const item = data.items.filter(it => it.category === category)[index];
@@ -427,7 +427,6 @@
                 previewCode.textContent = '加载中...';
                 previewModal.classList.add('active');
 
-                // 如果有 previewContent 直接显示，否则尝试从 dl 链接获取
                 if (item.previewContent) {
                     previewCode.textContent = item.previewContent;
                 } else if (item.dl && item.dl !== '#') {
@@ -496,7 +495,6 @@
             const menuToggle = document.getElementById('menuToggle');
             menuToggle.addEventListener('click', () => sidebar.classList.toggle('open'));
 
-            // 预览关闭按钮
             document.getElementById('closePreviewBtn').addEventListener('click', closePreview);
             previewModal.addEventListener('click', (e) => {
                 if (e.target === previewModal) closePreview();
@@ -517,16 +515,36 @@
 
             function toast(msg) {
                 const t = document.createElement('div');
-                t.className = 'toast'; t.textContent = msg;
+                t.style.cssText = 'position:fixed;bottom:24px;right:24px;background:rgba(0,0,0,0.8);color:#fff;padding:12px 20px;border-radius:30px;z-index:2000;';
+                t.textContent = msg;
                 document.body.appendChild(t);
                 setTimeout(() => t.remove(), 2000);
             }
 
+            // 视频背景回退逻辑（修复）
             const video = document.getElementById('bgVideo');
             const gradient = document.getElementById('bgGradient');
-            video.addEventListener('loadeddata', () => { gradient.style.display = 'none'; });
-            video.addEventListener('error', () => { video.style.display = 'none'; gradient.style.display = 'block'; });
-            if (video.readyState < 2) { video.style.display = 'none'; gradient.style.display = 'block'; }
+            function showFallbackBackground() {
+                video.style.display = 'none';
+                gradient.style.display = 'block';
+            }
+            function showVideoBackground() {
+                video.style.display = 'block';
+                gradient.style.display = 'none';
+            }
+            // 监听视频是否可播放
+            video.addEventListener('loadeddata', showVideoBackground);
+            video.addEventListener('error', showFallbackBackground);
+            // 如果视频已经处于错误状态或无法播放，直接显示回退
+            if (video.readyState >= 2) {
+                if (video.videoWidth === 0 && video.videoHeight === 0) showFallbackBackground();
+                else showVideoBackground();
+            } else {
+                // 等待一段时间后如果仍未加载成功，则使用回退背景
+                setTimeout(() => {
+                    if (video.readyState < 2) showFallbackBackground();
+                }, 3000);
+            }
 
             renderCategory('config');
         })();
