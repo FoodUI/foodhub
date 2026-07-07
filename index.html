@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodHub · 资源分享站</title>
-    <meta name="description" content="FoodHub 资源分享站 · 高透玻璃设计">
+    <meta name="description" content="FoodHub 资源分享站 · 极致高透玻璃设计">
     <meta name="author" content="FoodUI">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
     <style>
@@ -17,22 +17,24 @@
             --secondary-container: #cfd8dc;
             --on-secondary-container: #0a1c24;
             --surface: #f6faff;
-            --on-surface: #1a1c1e;
+            --on-surface: #ffffff;
             --surface-variant: rgba(224, 227, 235, 0.1);
-            --on-surface-variant: #2d2d2d;
+            --on-surface-variant: #f0f0f0;
             --outline: #70757c;
-            --outline-variant: rgba(255,255,255,0.25);
+            --outline-variant: rgba(255,255,255,0.15);
             --background: #f6faff;
             --on-background: #1a1c1e;
-            --glass-bg: rgba(255, 255, 255, 0.08);
-            --glass-border: rgba(255, 255, 255, 0.25);
-            --glass-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            --text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+            /* 极致高透玻璃 */
+            --glass-bg: rgba(255, 255, 255, 0.06);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            --text-shadow: 0 1px 8px rgba(0,0,0,0.7);
             --radius-full: 9999px;
-            --radius-lg: 24px;
+            --radius-lg: 28px;
             --transition: 0.25s cubic-bezier(0.2,0,0,1);
             --font: 'Google Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
             --mono: 'JetBrains Mono', 'Fira Code', monospace;
+            --blur-intensity: 5px;
         }
 
         [data-theme="dark"] {
@@ -44,17 +46,18 @@
             --secondary-container: #37474f;
             --on-secondary-container: #cfd8dc;
             --surface: #1a1c1e;
-            --on-surface: #e2e2e6;
-            --surface-variant: rgba(66, 71, 78, 0.15);
-            --on-surface-variant: #c0c4cc;
+            --on-surface: #ffffff;
+            --surface-variant: rgba(66, 71, 78, 0.1);
+            --on-surface-variant: #e0e0e0;
             --outline: #8a8f94;
             --outline-variant: rgba(255,255,255,0.1);
             --background: #1a1c1e;
             --on-background: #e2e2e6;
-            --glass-bg: rgba(20, 20, 25, 0.1);
-            --glass-border: rgba(255,255,255,0.1);
+            --glass-bg: rgba(20, 20, 25, 0.06);
+            --glass-border: rgba(255,255,255,0.08);
             --glass-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            --text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+            --text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+            --blur-intensity: 5px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -92,7 +95,7 @@
         .navbar {
             display: flex; align-items: center; justify-content: space-between; gap: 16px;
             padding: 12px 20px; margin-top: 16px;
-            background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: var(--glass-bg); backdrop-filter: blur(var(--blur-intensity)); -webkit-backdrop-filter: blur(var(--blur-intensity));
             border-radius: var(--radius-lg); border: 1px solid var(--glass-border);
             box-shadow: var(--glass-shadow); flex-wrap: wrap;
         }
@@ -105,23 +108,24 @@
         .navbar-links a {
             font-size: 0.85rem; font-weight: 500; color: var(--on-surface-variant);
             text-decoration: none; padding: 6px 12px; border-radius: var(--radius-full);
-            transition: background 0.2s;
+            transition: background 0.2s; text-shadow: var(--text-shadow);
         }
         .navbar-links a:hover, .navbar-links a.active { background: var(--glass-bg); color: var(--primary); }
         .navbar-actions { display: flex; gap: 10px; align-items: center; }
         .top-btn {
             background: var(--glass-bg); border: 1px solid var(--glass-border);
             border-radius: var(--radius-full); padding: 6px 14px; font-size: 0.8rem;
-            cursor: pointer; color: var(--on-surface); backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px); transition: all var(--transition);
+            cursor: pointer; color: var(--on-surface); backdrop-filter: blur(var(--blur-intensity));
+            -webkit-backdrop-filter: blur(var(--blur-intensity)); transition: all var(--transition);
+            text-shadow: var(--text-shadow); font-family: inherit;
         }
-        .top-btn:hover { background: rgba(255,255,255,0.15); }
+        .top-btn:hover { background: rgba(255,255,255,0.1); }
 
         .main-layout { display: flex; gap: 20px; margin-top: 20px; min-height: 70vh; }
 
         .sidebar {
             width: 260px; flex-shrink: 0;
-            background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: var(--glass-bg); backdrop-filter: blur(var(--blur-intensity)); -webkit-backdrop-filter: blur(var(--blur-intensity));
             border-radius: var(--radius-lg); border: 1px solid var(--glass-border);
             box-shadow: var(--glass-shadow); padding: 18px; position: sticky; top: 20px; align-self: flex-start;
             max-height: calc(100vh - 40px); overflow-y: auto;
@@ -135,13 +139,13 @@
         .menu-item { margin-bottom: 2px; }
         .menu-link {
             display: block; padding: 8px 12px; font-size: 0.85rem; color: var(--on-surface-variant);
-            text-decoration: none; border-radius: 8px; transition: background 0.2s;
+            text-decoration: none; border-radius: 8px; transition: background 0.2s; text-shadow: var(--text-shadow);
         }
-        .menu-link:hover, .menu-link.active { background: var(--primary); color: white; }
+        .menu-link:hover, .menu-link.active { background: var(--primary); color: white; text-shadow: none; }
 
         .content-area {
             flex: 1; min-width: 0;
-            background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: var(--glass-bg); backdrop-filter: blur(var(--blur-intensity)); -webkit-backdrop-filter: blur(var(--blur-intensity));
             border-radius: var(--radius-lg); border: 1px solid var(--glass-border);
             box-shadow: var(--glass-shadow); padding: 24px;
         }
@@ -157,23 +161,23 @@
             margin-top: 20px;
         }
         .resource-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            background: var(--glass-bg); backdrop-filter: blur(var(--blur-intensity)); -webkit-backdrop-filter: blur(var(--blur-intensity));
             border-radius: 20px; border: 1px solid var(--glass-border);
             padding: 18px; display: flex; flex-direction: column; gap: 10px;
-            transition: box-shadow 0.3s;
+            transition: box-shadow 0.3s; box-shadow: var(--glass-shadow);
+            color: var(--on-surface);
         }
         .resource-card:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
         .resource-name {
             font-size: 1.1rem; font-weight: 700; color: var(--on-surface);
-            display: flex; align-items: center; gap: 8px;
+            display: flex; align-items: center; gap: 8px; text-shadow: var(--text-shadow);
         }
         .resource-desc {
-            font-size: 0.85rem; color: var(--on-surface-variant);
+            font-size: 0.85rem; color: var(--on-surface-variant); text-shadow: var(--text-shadow);
             line-height: 1.5; flex: 1;
         }
         .resource-meta {
-            font-size: 0.75rem; color: var(--on-surface-variant);
+            font-size: 0.75rem; color: var(--on-surface-variant); text-shadow: var(--text-shadow);
             display: flex; gap: 12px; flex-wrap: wrap;
         }
         .resource-actions { display: flex; gap: 8px; margin-top: auto; }
@@ -182,10 +186,11 @@
             border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;
             cursor: pointer; border: none; transition: all var(--transition); white-space: nowrap;
             background: var(--glass-bg); color: var(--on-surface);
-            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(var(--blur-intensity)); -webkit-backdrop-filter: blur(var(--blur-intensity));
+            text-shadow: var(--text-shadow); border: 1px solid var(--glass-border);
         }
-        .btn:hover { background: rgba(255,255,255,0.15); }
-        .btn-primary { background: var(--primary); color: var(--on-primary); }
+        .btn:hover { background: rgba(255,255,255,0.1); }
+        .btn-primary { background: var(--primary); color: var(--on-primary); text-shadow: none; }
         .btn-primary:hover { background: #0055dd; }
 
         /* 预览模态框 */
@@ -207,6 +212,7 @@
             margin: 0; padding: 20px; background: rgba(0,0,0,0.2); color: var(--on-surface);
             font-family: var(--mono); font-size: 0.85rem; line-height: 1.7;
             white-space: pre-wrap; word-break: break-word; min-height: 300px;
+            text-shadow: none;
         }
         .modal-footer { display: flex; justify-content: flex-end; gap: 8px; padding: 12px 20px; border-top: 1px solid var(--glass-border); }
 
@@ -219,8 +225,8 @@
         .mobile-menu-toggle {
             display: none; background: var(--glass-bg); border: 1px solid var(--glass-border);
             border-radius: var(--radius-full); padding: 8px 16px; font-size: 0.85rem;
-            cursor: pointer; color: var(--on-surface); backdrop-filter: blur(5px);
-            margin-bottom: 12px;
+            cursor: pointer; color: var(--on-surface); backdrop-filter: blur(var(--blur-intensity));
+            margin-bottom: 12px; text-shadow: var(--text-shadow);
         }
 
         @media (max-width: 768px) {
@@ -234,11 +240,9 @@
     </style>
 </head>
 <body>
-    <!-- 视频背景，静音循环播放 -->
     <video class="video-bg" id="bgVideo" autoplay muted loop playsinline>
         <source src="background.mp4" type="video/mp4">
     </video>
-    <!-- 动态渐变背景（回退） -->
     <div class="gradient-bg" id="bgGradient"></div>
 
     <div class="container">
@@ -395,7 +399,7 @@
 
                 const items = data.items.filter(item => item.category === category);
                 if (items.length === 0) {
-                    resourceGrid.innerHTML = '<p style="color:var(--on-surface-variant);">暂无资源</p>';
+                    resourceGrid.innerHTML = '<p style="color:var(--on-surface-variant);text-shadow:var(--text-shadow);">暂无资源</p>';
                     return;
                 }
                 let html = '';
@@ -521,7 +525,7 @@
                 setTimeout(() => t.remove(), 2000);
             }
 
-            // 视频背景回退逻辑（修复）
+            // 视频背景回退逻辑
             const video = document.getElementById('bgVideo');
             const gradient = document.getElementById('bgGradient');
             function showFallbackBackground() {
@@ -532,15 +536,12 @@
                 video.style.display = 'block';
                 gradient.style.display = 'none';
             }
-            // 监听视频是否可播放
             video.addEventListener('loadeddata', showVideoBackground);
             video.addEventListener('error', showFallbackBackground);
-            // 如果视频已经处于错误状态或无法播放，直接显示回退
             if (video.readyState >= 2) {
                 if (video.videoWidth === 0 && video.videoHeight === 0) showFallbackBackground();
                 else showVideoBackground();
             } else {
-                // 等待一段时间后如果仍未加载成功，则使用回退背景
                 setTimeout(() => {
                     if (video.readyState < 2) showFallbackBackground();
                 }, 3000);
